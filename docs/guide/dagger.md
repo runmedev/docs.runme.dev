@@ -1,6 +1,6 @@
 ---
-title: Dagger
 sidebar_position: 5
+title: Dagger
 ---
 
 # Runme for Dagger
@@ -27,9 +27,49 @@ Install Dagger on your local machine. The [Dagger installation guide](https://do
 brew install dagger/tap/dagger
 ```
 
-## Using the Dagger CLI (aka `dagger call`)
+## Dagger Shell with ".dag" Notebooks
 
-Dagger CLI is the core tool used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI.
+Dagger shell is the latest interface for interacting with Dagger. If you're looking for `dagger call`, please see futher down in this guide. While it's up to personal preference, we recommend using Dagger Shell to express your Dagger pipelines. Its syntax is more concise and easier to read. For a complete introduction to Dagger shell, please visit the [Dagger docs](https://docs.dagger.io/).
+
+### Your first Dagger Shell notebook
+
+Of course, Runme can always bring up an instance of Dagger shell using the following command. This will drop you into a REPL prompt interface interface.
+
+```sh {"id":"01J6CH26D7HCJXVZXA2CATX4A2"}
+dagger shell
+```
+
+While a shell session is great during interactive development, Runme notebooks excel at expressing Dagger pipelines in a self-documenting manner. This is useful to document tasks, workflows, onboarding instructions, or the beaten path of your Dagger pipelines.
+
+There are two ways to get started with the native integration with Dagger shell:
+
+1. Add `dagger shell` as interpreter in your [cell configuration](https://docs.runme.dev/configuration/cell-level#cell-configuration-keys) or globally in the notebook document's [frontmatter](https://docs.runme.dev/configuration/document-level).
+2. Or, create a new `my-notebook.dag` notebook file (in the Runme Extension) in your project which will auto-set the document's frontmatter to use `dagger shell` as the interpreter.
+
+> 💡 Note that the `.dag` is interchangeable with `.md` and both will render to Markdown. The `.dag` extension is simply a signal to the Runme extension to bootstrap the document with the Dagger shell interpreter.
+
+![dagger shell in frontamtter](/img/integration/runme-dagger-shell-frontmatter.png)
+
+### What to expect from Dagger Shell-native Notebooks
+
+Here's a quick rundown. For a end-to-end example, please see [README.md](https://github.com/runmedev/docs.runme.dev/blob/main/dagger/README.md).
+
+Following simple snippet will build the runme binary for tag v3.12.2 and export it to a temporary file. While the language is Dagger shell, the syntax is standard shell compatible. Much like how `bash` or `zsh` are just `sh`.
+
+```sh {"interpreter":"dagger shell","terminalRows":"16"}
+github.com/purpleclay/daggerverse/golang $(git https://github.com/runmedev/runme | tag v3.12.2 | tree) |
+  build --arch arm64 --os darwin |
+  file runme |
+  export /tmp/runme_binary
+```
+
+Running the above snippet will produce the following output and drop a binary at `/tmp/runme_binary`.
+
+![build runme binary via dagger shell](/img/integration/runme-dagger-shell-snippet.png)
+
+## Alternative Dagger Call
+
+Dagger CLI is an alternative core interface used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI.
 
 This section will explore navigating the Dagger CLI in your Runme Notebooks. We will explain how it works in detail.
 
@@ -42,7 +82,7 @@ Let’s explore the code block below.
 ```sh {"id":"01J5TMAKC9QEMWB806SC1V5WH9"}
 dagger call \
     -m github.com/purpleclay/daggerverse/golang@v0.3.0 \
-    --src "https://github.com/stateful/runme#main" \
+    --src "https://github.com/runmedev/runme#main" \
     build \
         --arch $(go env GOARCH) \
         --os $(go env GOOS) \
