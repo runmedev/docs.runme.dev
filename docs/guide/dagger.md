@@ -1,8 +1,9 @@
 ---
+title: Dagger
 sidebar_position: 5
 ---
 
-# Dagger
+# Runme for Dagger
 
 In this guide, we will explain step-by-step how to integrate Dagger into Runme and how it works.
 
@@ -26,13 +27,13 @@ Install Dagger on your local machine. The [Dagger installation guide](https://do
 brew install dagger/tap/dagger
 ```
 
-## Navigating the Dagger CLI Using Runme Notebooks
+## Using the Dagger CLI (aka `dagger call`)
 
 Dagger CLI is the core tool used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI.
 
 This section will explore navigating the Dagger CLI in your Runme Notebooks. We will explain how it works in detail.
 
-### Writing Dagger Module within Runme Notebook cell
+### Calling Dagger Modules within Runme Notebook cell
 
 Runme Notebook interface includes a terminal environment with [additional features](/getting-started/vscode#interactive-mode), that gives you the experience of working in your regular terminal and more. With the Runme Notebook interface, you can write and execute Dagger commands.
 
@@ -57,7 +58,7 @@ Output:
 
 This output shows the steps executed by Dagger, which successfully performed the tasks in the code block.
 
-### Runme Interactive CLI Support
+### Runme Interactive CLI UX
 
 Runme offers additional support for the Dagger CLI by providing options and support based on the context of your current task.
 
@@ -122,9 +123,9 @@ This interactive interface makes the execution of complex pipelines easy and eli
 
 <video autoPlay loop muted playsInline controls>
   <source src="/videos/runme-dagger-output.mp4" type="video/mp4" />
-  <source src="/videos/runme-dagger-output.mp4" type="video/mp4" />
+  <source src="../../static/videos/runme-dagger-output.mp4" type="video/mp4" />
   <source src="/videos/runme-dagger-output.webm" type="video/webm" />
-  <source src="/videos/runme-dagger-output.webm" type="video/webm" />
+  <source src="../../static/videos/runme-dagger-output.webm" type="video/webm" />
 </video>
 <br/>
 
@@ -136,9 +137,9 @@ If you have a Markdown file with your dagger pipeline commands written, you can 
 
 <video autoPlay loop muted playsInline controls>
   <source src="/videos/runme-dagger-demo.mp4" type="video/mp4" />
-  <source src="/videos/runme-dagger-demo.mp4" type="video/mp4" />
+  <source src="../../static/videos/runme-dagger-demo.mp4" type="video/mp4" />
   <source src="/videos/runme-dagger-demo.webm" type="video/webm" />
-  <source src="/videos/runme-dagger-demo.webm" type="video/webm" />
+  <source src="../../static/videos/runme-dagger-demo.webm" type="video/webm" />
 </video>
 <br/>
 
@@ -146,9 +147,9 @@ You can also run individual cells using the names of the cells or select them in
 
 <video autoPlay loop muted playsInline controls>
   <source src="/videos/runme-tui-dagger.mp4" type="video/mp4" />
-  <source src="/videos/runme-tui-dagger.mp4" type="video/mp4" />
+  <source src="../../static/videos/runme-tui-dagger.mp4" type="video/mp4" />
   <source src="/videos/runme-tui-dagger.webm" type="video/webm" />
-  <source src="/videos/runme-tui-dagger.webm" type="video/webm" />
+  <source src="../../static/videos/runme-tui-dagger.webm" type="video/webm" />
 </video>
 <br/>
 
