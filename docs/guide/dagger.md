@@ -17,6 +17,7 @@ In this guide, we will explain step-by-step how to leverage both Dagger Shell an
     controls
   >
     <source src="/videos/typed-env-vars.mp4" type="video/mp4" />
+    <source src="../../static/videos/typed-env-vars.mp4" type="video/mp4" />
   </video>
   <figcaption>
     ➡️ Runme for Dagger in Action
