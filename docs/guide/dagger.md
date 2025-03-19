@@ -82,12 +82,14 @@ $ runme run RunmeBinary
 Shell expression syntax in Dagger Shell allows you to chain cells together. This is useful when you want to build more complex pipelines. The ability to build pipelines incrementally or build individual artifacts in isolation is a powerful feature for development, troubleshooting, and testing.
 
 ```sh {"interpreter":"dagger shell","name":"RunmeVersion"}
+# Exported as "RunmeVersion"
 git https://github.com/runmedev/runme | tag v3.12.2 | tree
 ```
 
 This exports a reference to Runme's git repository at the tag `v3.12.2` under `RunmeVersion`. In turn, this reference can be used with a shell expression to build the runme binary in separate cell.
 
 ```sh {"interpreter":"dagger shell","name":"RunmeBinary"}
+# Exported as "RunmeBinary"
 github.com/purpleclay/daggerverse/golang $(RunmeVersion) |
   build |
   file runme |
