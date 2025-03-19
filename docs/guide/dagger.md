@@ -8,19 +8,9 @@ title: Dagger
 In this guide, we will explain step-by-step how to leverage both Dagger Shell and "Dagger Call" integrations into Runme and how it works.
 
 <figure>
-  <video
-    class="rounded-md border-solid border-2"
-    autoplay="true"
-    loop
-    muted
-    playsinline
-    controls
-  >
-    <source src="/videos/typed-env-vars.mp4" type="video/mp4" />
-    <source src="../../static/videos/typed-env-vars.mp4" type="video/mp4" />
-  </video>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VGQhYHaIBwE?si=_vA23407Nns0X2d3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <figcaption>
-    ➡️ Runme for Dagger in Action
+    ➡️ Watch the Demo: Dagger Shell notebooks in Action
   </figcaption>
 </figure>
 <br />
