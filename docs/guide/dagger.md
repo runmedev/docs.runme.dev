@@ -7,6 +7,23 @@ title: Dagger
 
 In this guide, we will explain step-by-step how to leverage both Dagger Shell and "Dagger Call" integrations into Runme and how it works.
 
+<figure>
+  <video
+    class="rounded-md border-solid border-2"
+    autoplay="true"
+    loop
+    muted
+    playsinline
+    controls
+  >
+    <source src="/videos/typed-env-vars.mp4" type="video/mp4" />
+  </video>
+  <figcaption>
+    ➡️ Runme for Dagger in Action
+  </figcaption>
+</figure>
+<br />
+
 ## Getting Started
 
 To proceed with this guide, it is crucial to install Dagger first:
