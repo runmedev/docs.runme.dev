@@ -45,7 +45,7 @@ Install Dagger on your local machine. The [Dagger installation guide](https://do
 brew install dagger/tap/dagger
 ```
 
-## Dagger Shell with ".dag" Notebooks
+## **Dagger Shell** with ".dag" Notebooks
 
 Dagger shell is the latest interface for interacting with Dagger. If you're looking for `dagger call`, please see futher down in this guide. While it's up to personal preference, we recommend using Dagger Shell to express your Dagger pipelines. Its syntax is more concise and easier to read. For a complete introduction to Dagger shell, please visit the [Dagger docs](https://docs.dagger.io/).
 
@@ -126,7 +126,7 @@ This allows pipelines to be expressed incrementally, cell-by-cell, and still be 
 
 Please check out the Runme Extension's [shell.dag](https://github.com/runmedev/vscode-runme/blob/main/dagger/notebook/shell.dag) for a more comprehensive example.
 
-## Alternative Interface: "Dagger Call"
+## Alternative Interface: **Dagger Call**
 
 "dagger call" as part of the Dagger CLI is an alternative core interface used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI. While we do recommend using Dagger Shell, this CLI interface is still useful.
 
