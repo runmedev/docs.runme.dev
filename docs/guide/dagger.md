@@ -125,9 +125,9 @@ This allows pipelines to be expressed incrementally, cell-by-cell, and still be 
 
 Please check out the Runme Extension's [shell.dag](https://github.com/runmedev/vscode-runme/blob/main/dagger/notebook/shell.dag) for a more comprehensive example.
 
-## Alternative Interface: "dagger call"
+## Alternative Interface: "Dagger Call"
 
-Dagger CLI is an alternative core interface used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI. While we do recommend using Dagger Shell, this CLI interface is still useful.
+"dagger call" as part of the Dagger CLI is an alternative core interface used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI. While we do recommend using Dagger Shell, this CLI interface is still useful.
 
 This section will explore navigating the Dagger CLI in your Runme Notebooks. We will explain how it works in detail.
 
