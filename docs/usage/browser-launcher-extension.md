@@ -19,4 +19,4 @@ The web extension adds Runme links to the following places:
 
 ![Runme Link in Code Sections](/img/web-extension/code.png)
 
-You can find more information about the development of this web-extension at [`stateful/runme-web-extension`](https://github.com/stateful/runme-web-extension). Feel free to provide feedback and suggestions at any time.
+You can find more information about the development of this web-extension at [`stateful/runme-web-extension`](https://github.com/runmedev/runme-web-extension). Feel free to provide feedback and suggestions at any time.

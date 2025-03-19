@@ -89,7 +89,7 @@ Your VS Code view will split into two. One side has Notebook view, and the other
 
 <Infobox type="sidenote">
 
-Take a look at more [examples](https://github.com/stateful/vscode-runme/tree/main/examples) available inside the VS Code extension repo for a reference on how to apply these code block attributes in different use cases!
+Take a look at more [examples](https://github.com/runmedev/vscode-runme/tree/main/examples) available inside the VS Code extension repo for a reference on how to apply these code block attributes in different use cases!
 
 </Infobox>
 
@@ -183,7 +183,7 @@ openssl rand -base64 32
 
 If a cell has exported variables, the user will be prompted to set these variables. This can be useful to have a parameterized cell while not needing to manually modify the cell. Following modes are available:
 
-| Mode   | Description                                                                                                   |
+| Mode           | Description                                                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------- |
 | auto [default] | Prompt when environment variable has no value (e.g. loaded from .env).                                |
 | always / yes   | Always prompt allow for environment variable. Use existing value as placeholder if present.           |
@@ -333,7 +333,7 @@ echo "hello world"
 
 <Infobox type="sidenote">
 
-Take a look at more [examples](https://github.com/stateful/vscode-runme/tree/main/examples) available inside the VS Code extension repo for a reference on how to apply these code block attributes in different use cases!
+Take a look at more [examples](https://github.com/runmedev/vscode-runme/tree/main/examples) available inside the VS Code extension repo for a reference on how to apply these code block attributes in different use cases!
 
 </Infobox>
 

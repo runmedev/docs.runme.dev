@@ -262,4 +262,4 @@ bq --help
 
 ## Feedback
 
-You have successfully set up and configured Google BigQuery and executed SQL queries on BigQuery within your Runme notebook. We are constantly developing more features for Runme. If you have feedback on this or new ideas for improving this feature, feel free to [contact us](https://github.com/stateful/runme?tab=readme-ov-file#feedback).
+You have successfully set up and configured Google BigQuery and executed SQL queries on BigQuery within your Runme notebook. We are constantly developing more features for Runme. If you have feedback on this or new ideas for improving this feature, feel free to [contact us](https://github.com/runmedev/runme?tab=readme-ov-file#feedback).

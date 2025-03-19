@@ -1,7 +1,7 @@
 import GitHubButton from "react-github-btn";
 
 const RunmeStars = () => {
-  const href = "https://github.com/stateful/runme"
+  const href = "https://github.com/runmedev/runme"
   const text = "runme"
   return (
     <GitHubButton

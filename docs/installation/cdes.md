@@ -47,7 +47,8 @@ Gitpod is a cloud-based development environment that allows developers to launch
 
 In this section, we will walk you through how to Install Runme on Gitpod.
 
-### Sign Up and Login*
+### Sign Up and Login
+
 The first step is to create an account and sign-in. To do this, go to the [Gitpod website](https://gitpod.io/), click on **‘Try for Free’** and sign up using your GitHub, GitLab, or Bitbucket account.
 
 Once signed up, log in to Gitpod with the account you used earlier.
@@ -61,7 +62,7 @@ After completing the signup and log-in process, the next step is to create a new
 - Press Enter, and Gitpod will start setting up your workspace.
 
 ```sh {"id":"01J01CHB3T1KG1ZV9WT59RKDN2"}
-open https://gitpod.io/#https://github.com/stateful/Runme-CDEs
+open https://gitpod.io/#https://github.com/runmedev/runme-CDEs
 ```
 
 ### Installing Runme in Gitpod

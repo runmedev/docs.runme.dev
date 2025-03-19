@@ -10,11 +10,11 @@ We are committed to building Runme in the open and hope you get involved. Runme'
 
 Runme is available in five repositories on Github:
 
-- [Kernel / CLI](https://github.com/stateful/runme)
-- [VS Code extension](https://github.com/stateful/vscode-runme)
-- [Github action](https://github.com/stateful/runme-action)
-- [Docs](https://github.com/stateful/docs.runme.dev)
+- [Kernel / CLI](https://github.com/runmedev/runme)
+- [VS Code extension](https://github.com/runmedev/vscode-runme)
+- [Github action](https://github.com/runmedev/runme-action)
+- [Docs](https://github.com/runmedev/docs.runme.dev)
 
 ## Need help get started?
 
-For assistance or inquiries, please log any issues on [issues in Github](https://github.com/stateful/runme/issues), or [Join our Community](https://discord.gg/runme).
+For assistance or inquiries, please log any issues on [issues in Github](https://github.com/runmedev/runme/issues), or [Join our Community](https://discord.gg/runme).

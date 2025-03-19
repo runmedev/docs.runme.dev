@@ -54,7 +54,7 @@ export default function NotFound() {
                 </div>
                 <div className="flex flex-col space-y-2 text-sm">
                   <div className="text-[color:var(--ifm-navbar-link-color)] hover:underline">
-                    <a href="https://github.com/stateful/runme">GitHub</a>
+                    <a href="https://github.com/runmedev/runme">GitHub</a>
                   </div>
                   <div className="text-[color:var(--ifm-navbar-link-color)] hover:underline">
                     <a href="https://runme.dev/community">Community</a>

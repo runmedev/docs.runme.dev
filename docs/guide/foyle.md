@@ -116,8 +116,8 @@ In the image below, we are asking Foyle to describe a pod from the list of pods 
 
 ## Where to go next
 
-* For more information about Foyle check out the [Foyle documentation](https://foyle.io/docs).
+- For more information about Foyle check out the [Foyle documentation](https://foyle.io/docs).
 
 ## Feedback and Contribution
 
-If you have any tool or project you would like to see integrated with Runme, feel free to [contact us](https://github.com/stateful/runme?tab=readme-ov-file#feedback) with your idea. We will be glad to test it out.
+If you have any tool or project you would like to see integrated with Runme, feel free to [contact us](https://github.com/runmedev/runme?tab=readme-ov-file#feedback) with your idea. We will be glad to test it out.
