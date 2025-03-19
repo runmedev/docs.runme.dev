@@ -248,7 +248,7 @@ Runme auto-detects runtimes based on the language selection per cell.
   </tbody>
 </table>
 
-Missing a language? Please [raise an issue](https://github.com/stateful/runme/issues/new).
+Missing a language? Please [raise an issue](https://github.com/runmedev/runme/issues/new).
 
 ## Combining Multiple Languages in Your Notebook
 

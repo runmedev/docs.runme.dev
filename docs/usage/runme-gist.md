@@ -101,4 +101,4 @@ Congratulations! You have successfully learned how to use the Runme Gist feature
 
 **Note that Session Output files can be kept offline and locally**.
 
-You can read about that [here](https://runme.dev/blog/runme-v3-pipeline-logs-and-artifacts). If you love this feature, kindly give [Runme a star](https://github.com/stateful/runme/stargazers) on GitHub.
+You can read about that [here](https://runme.dev/blog/runme-v3-pipeline-logs-and-artifacts). If you love this feature, kindly give [Runme a star](https://github.com/runmedev/runme/stargazers) on GitHub.

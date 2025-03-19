@@ -10,7 +10,7 @@ This section will walk you through creating Python virtual environments in your 
 
 ## Creating a Python Virtual Environment
 
-In this [example](https://github.com/stateful/vscode-runme/blob/main/examples/shebang.md#python-), we will create a virtual environment, activate it, and install packages of our choice into the virtual environment. To create a Python virtual environment in Runme, follow the steps below:
+In this [example](https://github.com/runmedev/vscode-runme/blob/main/examples/shebang.md#python-), we will create a virtual environment, activate it, and install packages of our choice into the virtual environment. To create a Python virtual environment in Runme, follow the steps below:
 
 **Step 1**: Ensure the Runme extension is installed in your VS Code and make Runme your [default Markdown viewer](/getting-started/vscode#how-to-open-a-readme-file-as-a-markdown-file).
 

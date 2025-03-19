@@ -20,7 +20,7 @@ Check out our detailed installation guide for instructions on [installing Runme 
 
 - **Change directory**
 
-The next step is to navigate into your directory. However, if you do not have an existing folder you would love to work on, you can create a new folder or [clone the repo](https://github.com/stateful/vscode-runme/blob/main/examples/gcp/cloudRun.md) you want to work with.
+The next step is to navigate into your directory. However, if you do not have an existing folder you would love to work on, you can create a new folder or [clone the repo](https://github.com/runmedev/vscode-runme/blob/main/examples/gcp/cloudRun.md) you want to work with.
 
 To create a folder, run the command below
 
@@ -153,7 +153,7 @@ This will add a new code block that automatically downloads your YAML configurat
 
 ## Feedback and Contribution
 
-We are still developing more features for the Runme Notebook Cloud Renderers. If you have feedback on this or new ideas on how to improve this feature, feel free to [reach out to us](https://github.com/stateful/runme?tab=readme-ov-file#feedback).
+We are still developing more features for the Runme Notebook Cloud Renderers. If you have feedback on this or new ideas on how to improve this feature, feel free to [reach out to us](https://github.com/runmedev/runme?tab=readme-ov-file#feedback).
 
 ## Additional Resources
 

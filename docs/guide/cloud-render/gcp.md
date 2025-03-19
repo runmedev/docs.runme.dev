@@ -204,4 +204,4 @@ When this runs, the details dashboard of your cluster will be displayed.
 
 ## Feedback and Contribution
 
-We are still developing more features for the Runme Cloud Renderers. If you have feedback on this or new ideas on how to improve this feature, feel free to [reach out to us](https://github.com/stateful/runme?tab=readme-ov-file#feedback).
+We are still developing more features for the Runme Cloud Renderers. If you have feedback on this or new ideas on how to improve this feature, feel free to [reach out to us](https://github.com/runmedev/runme?tab=readme-ov-file#feedback).

@@ -61,7 +61,7 @@ After completing the signup and log-in process, the next step is to create a new
 - Press Enter, and Gitpod will start setting up your workspace.
 
 ```sh {"id":"01J01CHB3T1KG1ZV9WT59RKDN2"}
-open https://gitpod.io/#https://github.com/stateful/Runme-CDEs
+open https://gitpod.io/#https://github.com/runmedev/runme-CDEs
 ```
 
 ### Installing Runme in Gitpod

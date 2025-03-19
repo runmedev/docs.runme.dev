@@ -24,10 +24,10 @@ Runme is Markdown compatible (and a superset), open source licensed toolchain un
 
 All the code for Runme can be found in four repositories on GitHub:
 
-- [Kernel / CLI](https://github.com/stateful/runme)
-- [VS Code extension](https://github.com/stateful/vscode-runme)
-- [GitHub action](https://github.com/stateful/runme-action)
-- [Docs](https://github.com/stateful/docs.runme.dev)
+- [Kernel / CLI](https://github.com/runmedev/runme)
+- [VS Code extension](https://github.com/runmedev/vscode-runme)
+- [GitHub action](https://github.com/runmedev/runme-action)
+- [Docs](https://github.com/runmedev/docs.runme.dev)
 
 ## Introduction Video
 

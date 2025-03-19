@@ -51,7 +51,7 @@ The session outputs are written per Runme session, which is saved throughout the
 
 ![reset-session](/img/auto-save-reset-session.png)
 
-If there are more forms you would like to be added to the session output, kindly [let us know](https://github.com/stateful/runme/issues/new). We are open to incorporating your requests.
+If there are more forms you would like to be added to the session output, kindly [let us know](https://github.com/runmedev/runme/issues/new). We are open to incorporating your requests.
 
 ### Why Separate Session Outputs?
 
