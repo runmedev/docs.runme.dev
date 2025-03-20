@@ -17,13 +17,13 @@ In this guide, we will explain step-by-step how to leverage both Dagger Shell an
 
 ## Getting Started
 
-To proceed with this guide, it is crucial to install Dagger first:
+To proceed with this guide, it is crucial to install both Runme and Dagger first:
 
 - **Install Runme**
 
 Install the [Runme extension](https://marketplace.visualstudio.com/items?itemName=stateful.runme) in your VS Code editor. Runme also provides other [client interfaces](/installation/index.md) where you can run your Markdown file. Once installed, you can make Runme your [default Markdown viewer](/installation/vscode#how-to-set-vs-code-as-your-default-markdown-viewer).
 
-- **Install Docker(if not already installed)**
+- **Install Docker (if not already installed)**
 
 Get Docker installed and running on your local machine. You can download Docker from the [official website](https://www.docker.com/). After downloading Docker, you need to keep it running before executing any command.
 
@@ -35,7 +35,7 @@ Install Dagger on your local machine. The [Dagger installation guide](https://do
 brew install dagger/tap/dagger
 ```
 
-## **Dagger Shell** with ".dag" Notebooks
+## Notebooks with Dagger Shell
 
 Dagger shell is the latest interface for interacting with Dagger. If you're looking for `dagger call`, please see futher down in this guide. While it's up to personal preference, we recommend using Dagger Shell to express your Dagger pipelines. Its syntax is more concise and easier to read. For a complete introduction to Dagger shell, please visit the [Dagger docs](https://docs.dagger.io/).
 
@@ -65,6 +65,7 @@ Here's a quick rundown how to run a Dagger Module via the Dagger Shell inside a 
 Following simple snippet will build the runme binary for tag v3.12.2 and export it to a temporary file. While the language is Dagger shell, the syntax is standard shell compatible. Much like how `bash` or `zsh` are just `sh`.
 
 ```sh {"interpreter":"dagger shell","name":"RunmeBinary","terminalRows":"16"}
+### Exported in runme.dev as RunmeBinary
 github.com/purpleclay/daggerverse/golang $(git https://github.com/runmedev/runme | tag v3.12.2 | tree) |
   build --arch arm64 --os darwin |
   file runme |
@@ -90,6 +91,7 @@ $ runme run RunmeBinary
 Shell expression syntax in Dagger Shell allows you to chain cells together. This is useful when you want to build more complex pipelines. The ability to build pipelines incrementally or build individual artifacts in isolation is a powerful feature for development, troubleshooting, and testing.
 
 ```sh {"interpreter":"dagger shell","name":"RunmeVersion"}
+### Exported in runme.dev as RunmeVersion
 # Exported as "RunmeVersion"
 git https://github.com/runmedev/runme | tag v3.12.2 | tree
 ```
@@ -97,6 +99,7 @@ git https://github.com/runmedev/runme | tag v3.12.2 | tree
 This exports a reference to Runme's git repository at the tag `v3.12.2` under `RunmeVersion`. In turn, this reference can be used with a shell expression to build the runme binary in separate cell.
 
 ```sh {"interpreter":"dagger shell","name":"RunmeBinary"}
+### Exported in runme.dev as RunmeBinary
 # Exported as "RunmeBinary"
 github.com/purpleclay/daggerverse/golang $(RunmeVersion) |
   build |
@@ -116,22 +119,22 @@ This allows pipelines to be expressed incrementally, cell-by-cell, and still be 
 
 Please check out the Runme Extension's [shell.dag](https://github.com/runmedev/vscode-runme/blob/main/dagger/notebook/shell.dag) for a more comprehensive example.
 
-## Alternative Interface: **Dagger Call**
+## Notebooks with Dagger Call
 
-"dagger call" as part of the Dagger CLI is an alternative core interface used to interact with Dagger’s functions. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI. While we do recommend using Dagger Shell, this CLI interface is still useful.
+Alternatively to Dagger Shell is "dagger call" which is a core part of the Dagger CLI to call into functions directly from the CLI. You can chain commands and build entire DevOps pipelines by calling dagger functions from the CLI. While we do recommend using Dagger Shell, this CLI interface is still useful depending on your use case.
 
 This section will explore navigating the Dagger CLI in your Runme Notebooks. We will explain how it works in detail.
 
-### Calling Dagger Modules within Runme Notebook cell
+### Calling Dagger modules inside cells
 
 Runme Notebook interface includes a terminal environment with [additional features](/getting-started/vscode#interactive-mode), that gives you the experience of working in your regular terminal and more. With the Runme Notebook interface, you can write and execute Dagger commands.
 
 Let’s explore the code block below.
 
-```sh
+```sh {"terminalRows":"14"}
 dagger call \
     -m github.com/purpleclay/daggerverse/golang@v0.3.0 \
-    --src "https://github.com/runmedev/runme#main" \
+    --src "https://github.com/runmedev/runme#v3.12.2" \
     build \
         --arch $(go env GOARCH) \
         --os $(go env GOOS) \
@@ -139,70 +142,36 @@ dagger call \
         --path runme
 ```
 
-This code uses the Dagger CLI to build a [Go](https://go.dev/) project from the `runme` GitHub repository using your system's architecture and Operating System. After the build, it fetches a specific file from the `runme` project.
-
-Output:
+This code uses the Dagger CLI to build a [Go](https://go.dev/) project from the `runme` GitHub repository using your system's architecture and Operating System. After the build finishes, it holds a reference to the specific build artifact, the `runme` binary.
 
 ![runme binary](/img/integration/runme-dagger-runme-binary.png)
 
-This output shows the steps executed by Dagger, which successfully performed the tasks in the code block.
+This output shows the steps executed by Dagger, which successfully performed the tasks in the code block and built the runme binary. However, unless explicitly specified, it won't export the binary to your local machine. More below.
 
 ### Run with Runme CLI
 
-Runme offers additional support for the Dagger CLI by providing options and support based on the context of your current task.
+The code block below illustrates how to export the `runme` binary to your local machine after building it.
 
-When you insert a Dagger command into a Runme cell, Runme automatically provides helpful CLI options based on the type of result returned (like a file, directory, or text). It shows buttons like "Export" or "Size," allowing you to run the next step with a quick click.
-
-![runme cli dagger ](/img/integration/runme-dagger-file-ready.png)
-
-To retrieve the file's name, click on `Name`. A code block similar to the one below will be created and automatically run to display the file's name.
-
-```sh
+```sh {"name":"BinaryArtifact"}
+# This cell is named "BinaryArtifact", please see raw markdown to inspect the metadata
 dagger call \
     -m github.com/purpleclay/daggerverse/golang@v0.3.0 \
-    --src "https://github.com/runmedev/runme#main" \
+    --src "https://github.com/runmedev/runme#v3.12.2" \
     build \
         --arch $(go env GOARCH) \
         --os $(go env GOOS) \
     file \
-        --path runme name
+        --path runme \
+    export --path runme
 ```
 
-To get the size of your file, click on `size`. A code block similar to the one below will be created and automatically run to display the size of your file.
+Please note how above's cell is named `BinaryArtifact`. The name reference is saved inside of the Markdown's fenced code block as metadata. This allows you to run the cell with the Runme CLI.
 
 ```sh
-dagger call --progress=$PROGRESS \
-  -m golang \
-  --src ../runme \
-  build \
-  file \
-    --path runme size
+$ runme run BinaryArtifact
 ```
 
-To view the contents of your file, click on `content`. A code block similar to the one below will be created and automatically run to display the contents of your file.
-
-```sh
-# This code block will show the contents of your specified file
-dagger call \
-    -m github.com/purpleclay/daggerverse/golang@v0.3.0 \
-    --src "https://github.com/runmedev/runme#main" \
-    file \
-    --path runme contents
-```
-
-To export your file, click on `export`. First, you will be prompted to choose where you'd like to save the file, and the file path will be displayed. After selecting the location, a code block similar to the one below will be created and automatically run to export your file.
-
-```sh
-# This code block will export the specified file from your project
-dagger call \
-    -m github.com/purpleclay/daggerverse/golang@v0.3.0 \
-    --src "https://github.com/runmedev/runme#main" \
-    build \
-        --arch $(go env GOARCH) \
-        --os $(go env GOOS) \
-    file \
-    --path runme export --path runme
-```
+![runme cli dagger named cell](/img/integration/runme-dagger-named-cell.png)
 
 ### Running Dagger Functions with a Single Click
 
@@ -248,6 +217,6 @@ To learn more about how the Runme CLI functions and how to use it for your proje
 
 To learn more about Runme, see more resources on Runme Integrations:
 
-[Runme Cloud Renderers](/guide/cloud-render/)
-[Data Rendering with Runme and JSON](/configuration/output-rendering)
-[How to Use Foyle AI with Runme](/guide/foyle)
+- [Runme Cloud Renderers](/guide/cloud-render/)
+- [Data Rendering with Runme and JSON](/configuration/output-rendering)
+- [How to Use Foyle AI with Runme](/guide/foyle)
