@@ -189,9 +189,7 @@ This interactive interface makes the execution of complex pipelines easy and eli
 
 ## Running Dagger Pipelines in Runme (using the CLI)
 
-More than just running Dagger commands, developing pipelines, or troubleshooting them in VSCode, Runme also helps you run your Dagger pipelines inside your notebook through the Runme CLI.
-
-If you have a Markdown file with your dagger pipeline commands written, you can run your pipeline from the terminal by running this command `$ runme run --filename my-notebook.md --all --skip-prompts`.
+No matter whether the Dagger Shell or Dagger Call interface are being used. Once you have a notebook with your Dagger pipeline commands written, you can run your pipeline from the terminal by running this command `$ runme run --filename my-notebook.md --all --skip-prompts`.
 
 <video autoPlay loop muted playsInline controls>
   <source src="/videos/runme-dagger-demo.mp4" type="video/mp4" />
