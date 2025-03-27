@@ -30,7 +30,7 @@ $ grep "HTTP_404" links.log
 Ignore externals.
 
 ```sh {"id":"01HPS5ZD9VAJA60MJWEACJ04W5","interactive":"false"}
-$ cat links.log | grep -v "https://github.com" | grep -v "https://marketplace" | grep "HTTP_404"
+$ cat links.log | grep -v "https://github.com" | grep -v "https://marketplace" | grep "HTTP_404" | grep -v "/static/videos/"
 ```
 
 ### Installation
