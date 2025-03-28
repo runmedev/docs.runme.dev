@@ -213,7 +213,7 @@ You can also run individual cells using the names of the cells or select them in
 
 To learn more about how the Runme CLI functions and how to use it for your project, check out [our documentation.](/getting-started/cli)
 
-## Full Demo (Recorded at Dagger Community Event)
+## Recorded Demo at Dagger Community Event
 
 <figure>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/VGQhYHaIBwE?si=_vA23407Nns0X2d3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
