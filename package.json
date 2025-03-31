@@ -23,7 +23,7 @@
     "js-yaml": "^4.1.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^19.1.0",
     "react-github-btn": "^1.4.0",
     "react-timeout": "^2.0.1",
     "unist-util-visit": "^5.0.0"
