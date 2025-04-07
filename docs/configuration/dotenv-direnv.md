@@ -60,9 +60,16 @@ If you are unsure if Direnv is enabled for your project, you can use Direnv's CL
 direnv: export +GITHUB_TOKEN +GOAWAY +MY_NAME"}
 ```
 
+## Env Store tab in Pre-release
+
+Runme now has a dedicated tab for managing environment variables available in Runme's pre-release. It shows the environment variables currently set in the session, when and where they were set, and securely allows inspecting their values.
+
+![Environment populated with direnv/.envrc](../../static/img/configuration-page/runme-env-store-tab.png)
+> Example of Env Store tab in action
+
 ## Experimental Owl Store
 
-Runme also offers the [🦉 Owl Store](https://runme.dev/blog/typed-env-vars), an experimental implementation of a Environment Variables Store that provides a type system for environment variables. It helps specify, verify, and ensure correctness of environment variables in your notebooks and tasks.
+While the Env Store tab is one of many 🦉 Owl Store features in Runme. The [🦉 Owl Store](https://runme.dev/blog/typed-env-vars) is an experimental implementation of a Environment Variables Store that's rooted in a type system for environment variables. It helps specify, verify, and ensure correctness of environment variables in your notebooks and tasks.
 
 <video autoPlay loop muted playsInline controls>
   <source src="../../static/videos/typed-env-vars.mp4" type="video/mp4" />
