@@ -1,4 +1,8 @@
-# Lifecycle Identity
+---
+title: Lifecycle identity
+---
+
+# Lifecycle Identity for Cells and Documents
 
 The Lifecycle Identity feature in Runme is a tool that assigns unique identifiers and versions to individual cells, the entire file, or both, depending on your [configuration](https://docs.runme.dev/configuration/).
 
