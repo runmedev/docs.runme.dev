@@ -4,7 +4,7 @@ Runme has a built-in Environment store that manages configuration and secrets pe
 
 For your projects, you can use `dotenv` or `direnv` to populate environment variables at session startup.
 
-If notebooks or tasks in your project change values of environment variables as part of their execution, you can reset the session (e.g. using the notebook UX "Reset Session" toolbar button) which in turn resets the environment variables to the initial values.
+If notebooks or tasks in your project mutate values of environment variables as part of their execution, you can reset the session (e.g. using the notebook UX "Reset Session" toolbar button) which in turn resets the environment variables to the initial values.
 
 ## How to use DotEnv
 
@@ -15,13 +15,13 @@ The `.env` and `.env.local` files are loaded into the environment of the session
 ### Example `.env` file
 
 ```sh
-NODE_ENV="development"
 ALLOWED_URL_PATTERNS="^vscode:|^vscode-insiders:|\.github\.dev|^vscode\.dev"
+DATABASE_URL=postgres://platform:platform@localhost:5432/platform
+TEST_DATABASE_URL=postgres://platform:platform@localhost:5432/test
+DIRECT_DATABASE_URL=postgres://platform:platform@localhost:5432/platform
+NODE_ENV="development"
 PORT=4000
 WEB_PORT=4001
-DATABASE_URL=postgres://platform:platform@localhost:5432/platform
-DIRECT_DATABASE_URL=postgres://platform:platform@localhost:5432/platform
-TEST_DATABASE_URL=postgres://platform:platform@localhost:5432/test
 ```
 
 Please note that `.env` does not allow for shell evaluation and expression such as `export HOMEDIR=$(pwd)` will be ignored. If you need to use shell expressions, skip ahead and use `direnv` instead.
@@ -41,7 +41,15 @@ Runme requires both authorization via `direnv allow` and a Session reset to sour
 export GITHUB_TOKEN="$(gh auth token)"
 ```
 
-Unlike `.env`, `.envrc` allows for shell evaluation and expression such as `export HOMEDIR=$(pwd)` will be honored. `direnv` comes with built-in security features to prevent the execution of arbitrary shell commands.
+Unlike DotEnv, Direnv allows for shell evaluation and expression such as `export HOMEDIR=$(pwd)` will be honored. Direnv comes with built-in security features to prevent the execution of arbitrary shell commands.
+
+```sh
+$ direnv allow
+direnv: loading ~/Projects/stateful/oss/vscode-runme/examples/.envrc
+direnv: export +GITHUB_TOKEN +GOAWAY +MY_NAME
+```
+
+Security is a core feature of Direnv and is documented at [direnv.net](https://direnv.net/). Runme inherits these features when sourcing `.envrc` files.
 
 ### Checking if direnv is enabled
 
