@@ -62,7 +62,7 @@ direnv: export +GITHUB_TOKEN +GOAWAY +MY_NAME"}
 
 ## Experimental Owl Store
 
-Runme also offers the 🦉 Owl Store, an experimental implementation of a Environment Variables Store that provides a type system for environment variables. It helps specify, verify, and ensure correctness of environment variables in your notebooks and tasks.
+Runme also offers the [🦉 Owl Store](https://runme.dev/blog/typed-env-vars), an experimental implementation of a Environment Variables Store that provides a type system for environment variables. It helps specify, verify, and ensure correctness of environment variables in your notebooks and tasks.
 
 <video autoPlay loop muted playsInline controls>
   <source src="../../static/videos/typed-env-vars.mp4" type="video/mp4" />
