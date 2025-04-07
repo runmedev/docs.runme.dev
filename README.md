@@ -24,7 +24,7 @@ $ rm -f links.log; npx blc https://docs.runme.dev -ro > links.log
 All 404s.
 
 ```sh {"id":"01HPS67YRQ942VG2C4QXA238QX","interactive":"false"}
-$ grep "HTTP_404" links.log
+$ grep "HTTP_404" links.log | sort
 ```
 
 Ignore externals.
