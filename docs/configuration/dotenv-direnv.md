@@ -4,6 +4,8 @@ Runme has a built-in Environment store that manages configuration and secrets pe
 
 For your projects, you can use DotEnv or Direnv to populate environment variables at session startup.
 
+![DotEnv and Direnv Support](../../static/img/configuration-page/runme-env-store.png)
+
 If notebooks or tasks in your project mutate values of environment variables as part of their execution, you can reset the session (e.g. using the notebook UX "Reset Session" toolbar button) which in turn resets the environment variables to the initial values.
 
 ## How to use DotEnv
@@ -65,6 +67,7 @@ direnv: export +GITHUB_TOKEN +GOAWAY +MY_NAME"}
 Runme now has a dedicated tab for managing environment variables available in Runme's pre-release. It shows the environment variables currently set in the session, when and where they were set, and securely allows inspecting their values.
 
 ![Environment populated with direnv/.envrc](../../static/img/configuration-page/runme-env-store-tab.png)
+
 > Example of Env Store tab in action
 
 ## Experimental Owl Store
