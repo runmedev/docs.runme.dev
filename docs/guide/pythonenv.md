@@ -20,8 +20,8 @@ In this [example](https://github.com/runmedev/vscode-runme/blob/main/examples/sh
 
 ```sh
 python3 -m venv .venv
-source.venv/bin/activate
-pip3 install docker prettyatble
+source .venv/bin/activate
+pip3 install docker prettytable
 ```
 
 ![Python virtual environment ](/img/guide-page/python-env.jpg)
