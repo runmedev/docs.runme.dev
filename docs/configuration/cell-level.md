@@ -36,7 +36,7 @@ Cell level options gives users the flexibility to modify the behavior of each ex
 | excludeFromRunAll      | Prevent executing this cell during the "Run All" operation                                                                         | false                      |
 | interactive            | Indicates if run should allow interactive input                                                                                    | false                      |
 | interpreter            | The program or command line inserted into shebang (aka #!) line                                                                    | [inferred from languageId] |
-| mimetype               | If set skips auto-detection and uses specific media (MIME) type                                                                    | [empty]                    |
+| mimeType               | If set skips auto-detection and uses specific media (MIME) type                                                                    | [empty]                    |
 | name                   | Cell’s canonical name useful for referencing the cell via CLI                                                                      | [auto-generated]           |
 | ignore                 | Ingore code block from CLI and notebook transformation into a runnable cell                                                        | false                      |
 | transform              | Transform code block into a runnable cell (notebook) and include as task in CLI (inverse of ignore; most relevant for `mermaid`)   | true                       |
@@ -77,7 +77,7 @@ The above example uses the `echo` command to display the text **_hello world_** 
 Another example (HTML-attributes notation):
 
 ````sh {"id":"01HPM6HZEJKM8PPG6T38RABV9A"}
-```sh { interactive=true name=example mimetype=text/plain closeTerminalOnSuccess=false background=false }
+```sh { interactive=true name=example mimeType=text/plain closeTerminalOnSuccess=false background=false }
 echo hello world
 ````
 
@@ -243,19 +243,19 @@ A cell's execution terminal is auto-hidden unless it fails. This default behavio
 docker ps | grep runme/demo:latest
 ````
 
-### Human-friendly output / mimetype configuration
+### Human-friendly output / mimeType configuration
 
 Not all cells’ output is plain text. For example, you can have JSON, text, images, etc, all in your Markdown file.
 
 You can configure to any of your choice in the cell configuration setting.
 
-![mimetype](/img/mimetype.png)
+![mimeType](/img/mimetype.png)
 
-Using the optional **mimetype** specifier, you can specify the expected output type. Runme Notebooks have a variety of renderers that will display them as human-friendly. The MIME type defaults to *text/plain*.
+Using the optional **mimeType** specifier, you can specify the expected output type. Runme Notebooks have a variety of renderers that will display them as human-friendly. The MIME type defaults to *text/plain*.
 
-When the **interactive** setting is turned off, and the **mimetype** value is empty, Runme attempt to auto-detect the MIME Type. This is useful for automatically displaying a cell's output according to the renderers available in your VS Code installation. If you specify a specific MIME Type, it will be used instead of auto-detection.
+When the **interactive** setting is turned off, and the **mimeType** value is empty, Runme attempt to auto-detect the MIME Type. This is useful for automatically displaying a cell's output according to the renderers available in your VS Code installation. If you specify a specific MIME Type, it will be used instead of auto-detection.
 
-Runme has a `mimetype` feature that enables you to render images, CSV-based tables, and other supported content type right inside your Markdown file. Runme supports a wide range of mimetypes such as `text/x-json`, `text/x-javascript`, `text/x-html`, `image/png`, `image/svg+xml` and `text/csv`.
+Runme has a `mimeType` feature that enables you to render images, CSV-based tables, and other supported content type right inside your Markdown file. Runme supports a wide range of Media types such as `text/x-json`, `text/x-javascript`, `text/x-html`, `image/png`, `image/svg+xml` and `text/csv`.
 
 ![Human-centric output](/img/human-centric-output.png)
 

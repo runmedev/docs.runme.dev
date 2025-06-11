@@ -12,9 +12,9 @@ Multipurpose Internet Mail Extensions(MIME) types are a standard way of indicati
 
 In this guide, we will work with JSON data to specify that.
 
-![Runme mimetype](/img/guide-page/runme-mimetype.png)
+![Runme mimeType](/img/guide-page/runme-mimetype.png)
 
-However it is important to note that setting the `mimetype` is optional as Runme has an effective auto-detection that detects JSON/CSV files reliably.
+However it is important to note that setting the `mimeType` is optional as Runme has an effective auto-detection that detects JSON/CSV files reliably.
 
 ### Interactive Mode
 
