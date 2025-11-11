@@ -11,11 +11,12 @@ These are the options specified in the front-matter that apply to all the cells 
 
 Can be specified in yaml, json, or toml on top of the document.
 
-| Configuration | Description                              | Default value             |
-| ------------- | ---------------------------------------- | ------------------------- |
-| cwd           | Overwrites the default working directory | [Markdown file's basedir] |
-| shell         | Overwrites shell with custom preference  | [system/user default]     |
-| skipPrompts   | Bypasses interactive prompts             | [system/user default]     |
+| Configuration | Description                              | Default value                |
+| ------------- | ---------------------------------------- | ---------------------------- |
+| cwd           | Overwrites the default working directory | [Markdown file's basedir]    |
+| shell         | Overwrites shell with custom preference  | [system/user default]        |
+| skipPrompts   | Bypasses interactive prompts             | [system/user default]        |
+| terminalRows  | Number of terminal rows                  | 10 unless specificed in cell |
 
 ## Set Custom Shell
 
@@ -47,5 +48,15 @@ To simplify commands and avoid long pathnames in commands you can set the base d
 cwd: ..
 # absolute works too, however, less commonplace
 cwd: /tmp
+---
+```
+
+## Terminal Rows
+
+To set the number of terminal rows to display in the notebook, you can use the `terminalRows` option in the front-matter config. Please note that this will override the default rows in the settings but won't override the rows set in the cell.
+
+```
+---
+terminalRows: 20
 ---
 ```
