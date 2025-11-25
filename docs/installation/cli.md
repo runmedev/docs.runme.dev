@@ -142,7 +142,7 @@ Additionally, we have provided an option for Go developers to install Runme. If 
 Simply use the command below to carry out this installation:
 
 ```sh {"id":"01HQK3RSC9YSH5NM2AE503GRB5"}
-go install github.com/runmedev/runme@latest
+go install github.com/runmedev/runme/v3@latest
 ```
 
 <Infobox type="warning" title="Warning!">
