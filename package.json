@@ -40,7 +40,7 @@
     "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.1",
     "typescript": "^5.5.4",
-    "vercel": "^48.0.0"
+    "vercel": "^49.1.2"
   },
   "browserslist": {
     "production": [
