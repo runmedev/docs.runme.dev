@@ -44,7 +44,6 @@ const config = {
   },
 
   plugins: [
-    require.resolve("./plugins/koala-plugin"),
     async function tailwindCSS(context, options) {
       return {
         name: "docusaurus-tailwindcss",

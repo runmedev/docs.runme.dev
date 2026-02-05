@@ -6,3 +6,6 @@ build
 .DS_Store
 .vscode/settings.json
 links.log
+
+# Local Netlify folder
+.netlify
