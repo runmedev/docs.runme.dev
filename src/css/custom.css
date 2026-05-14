@@ -125,6 +125,40 @@ h1.text-white {
   box-shadow: none;
 }
 
+[class^="announcementBar_"],
+[class*=" announcementBar_"] {
+  border-bottom: 1px solid rgba(13, 0, 61, 0.16);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+[class^="announcementBar_"] a,
+[class*=" announcementBar_"] a {
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+[class^="announcementBar_"] a:hover,
+[class*=" announcementBar_"] a:hover {
+  color: var(--ifm-color-primary-darker);
+}
+
+[class^="announcementBar_"] .clean-btn,
+[class*=" announcementBar_"] .clean-btn {
+  color: #0d003d;
+}
+
+[data-theme="dark"] [class^="announcementBar_"],
+[data-theme="dark"] [class*=" announcementBar_"] {
+  background-color: #ffdb06 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.16);
+  color: #0d003d !important;
+}
+
 .navbar__brand {
   margin-right: 0;
 }

@@ -19,6 +19,37 @@ const keywords = [
   "renderer",
 ];
 
+const visrAnnouncementDismissScript = `(function() {
+  var dismissedAtKey = "runme.visrAnnouncement.dismissedAt";
+  var docusaurusDismissKey = "docusaurus.announcement.dismiss";
+  var dismissedAttribute = "data-runme-visr-announcement-dismissed";
+  var ttl = 48 * 60 * 60 * 1000;
+
+  function setDismissedAttribute(isDismissed) {
+    document.documentElement.setAttribute(dismissedAttribute, String(isDismissed));
+  }
+
+  try {
+    var value = window.localStorage.getItem(dismissedAtKey);
+    var dismissedAt = Number(value);
+    var isDismissed =
+      Boolean(value) &&
+      Number.isFinite(dismissedAt) &&
+      Date.now() - dismissedAt < ttl;
+
+    if (isDismissed) {
+      window.localStorage.setItem(docusaurusDismissKey, "true");
+    } else {
+      window.localStorage.removeItem(dismissedAtKey);
+      window.localStorage.setItem(docusaurusDismissKey, "false");
+    }
+
+    setDismissedAttribute(isDismissed);
+  } catch (err) {
+    setDismissedAttribute(false);
+  }
+})();`;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "RUNME",
@@ -139,6 +170,14 @@ const config = {
         { property: "og:url", content: prodUrl },
         { property: "og:type", content: "website" },
       ],
+      announcementBar: {
+        id: "visr_runbooks",
+        content:
+          'New: Visr turns terminal sessions into agent-ready runbooks. <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev/?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Create your first runbook &rarr;</a>',
+        backgroundColor: "#fff4b8",
+        textColor: "#0d003d",
+        isCloseable: true,
+      },
       navbar: {
         logo: {
           alt: "RUNME Logo",
@@ -200,6 +239,11 @@ const config = {
         : {}),
     }),
   headTags: [
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: visrAnnouncementDismissScript,
+    },
     {
       tagName: "link",
       attributes: {
