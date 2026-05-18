@@ -173,9 +173,9 @@ const config = {
       announcementBar: {
         id: "visr_runbooks",
         content:
-          'New: Visr turns terminal sessions into agent-ready notebooks. <a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Create your first notebook &rarr;</a>',
-        backgroundColor: "#fff4b8",
-        textColor: "#0d003d",
+          'New: End terminal amnesia. <a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn sessions into agent-ready skills &rarr;</a>',
+        backgroundColor: "#facc15",
+        textColor: "#000000",
         isCloseable: true,
       },
       navbar: {
