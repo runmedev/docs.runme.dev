@@ -174,8 +174,8 @@ const config = {
         id: "visr_runbooks",
         content:
           'New: End terminal amnesia. <a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn sessions into agent-ready skills &rarr;</a>',
-        backgroundColor: "#fff4b8",
-        textColor: "#0d003d",
+        backgroundColor: "#facc15",
+        textColor: "#000000",
         isCloseable: true,
       },
       navbar: {
