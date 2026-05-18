@@ -70,7 +70,7 @@ Flags:
 Use "runme [command] --help" for more information about a command.
 
 Feedback:
-  For issues and questions join the Runme community at https://discord.gg/runme
+  For issues and questions join the Runme community at https://discord.gg/jFy92yxT
 ```
 
 The base command for the Runme CLI is runme. For example, to run an interactive Terminal User Interface(TUI), the command below does that.

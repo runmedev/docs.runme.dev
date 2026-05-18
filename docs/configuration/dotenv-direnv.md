@@ -82,4 +82,4 @@ While the Env Store tab is one of many ðŸ¦‰ Owl Store features in Runme. The [ðŸ
 </video>
 <br />
 
-A detailed walkthrough of the Owl Store is worth a read in this blog post: [Typed ENV Vars for Valid Environments from Dev to Production](https://runme.dev/blog/typed-env-vars). Feedback is welcome! Find us on [Discord](https://discord.gg/runme) or [GitHub Issues](https://github.com/runmedev/runme/issues/new).
+A detailed walkthrough of the Owl Store is worth a read in this blog post: [Typed ENV Vars for Valid Environments from Dev to Production](https://runme.dev/blog/typed-env-vars). Feedback is welcome! Find us on [Discord](https://discord.gg/jFy92yxT) or [GitHub Issues](https://github.com/runmedev/runme/issues/new).

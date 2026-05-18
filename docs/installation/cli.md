@@ -134,7 +134,7 @@ Run the binary by simply typing `runme`
 runme
 ```
 
-If you have a different preferred distribution mechanism, feel free to inform us on [Discord](https://discord.gg/runme). We will be glad to explore it.
+If you have a different preferred distribution mechanism, feel free to inform us on [Discord](https://discord.gg/jFy92yxT). We will be glad to explore it.
 
 ### Install Runme using Go
 
@@ -215,7 +215,7 @@ Flags:
 Use "runme [command] --help" for more information about a command.
 
 Feedback:
-  For issues and questions join the Runme community at https://discord.gg/runme
+  For issues and questions join the Runme community at https://discord.gg/jFy92yxT
 ```
 
 Runme’s TUI is awesome however, if you want to run a specific command quickly, simply run a specific script by name using the `runme run <command>` subcommand.
