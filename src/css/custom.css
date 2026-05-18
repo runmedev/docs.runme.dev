@@ -400,6 +400,15 @@ video {
   border-radius: 10px;
 }
 
+.markdown video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  height: auto;
+  margin: 1em auto;
+}
+
 .notfound {
   width: 100%;
 }
