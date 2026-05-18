@@ -5,4 +5,4 @@
 
 ## Communication & Support
 
-Need assistance in getting started? Get in touch with members of our team via [Discord](https://discord.gg/runme) and get answers to your questions and all the necessary details to get you started with Runme.
+Need assistance in getting started? Get in touch with members of our team via [Discord](https://discord.gg/jFy92yxT) and get answers to your questions and all the necessary details to get you started with Runme.

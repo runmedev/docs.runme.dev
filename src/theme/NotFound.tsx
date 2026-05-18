@@ -26,7 +26,7 @@ export default function NotFound() {
               <p>We could not find what you were looking for.</p>
               <p>
                 It would mean the world to us if you get let us know on{" "}
-                <a href="https://discord.gg/runme">Discord</a>.
+                <a href="https://discord.gg/jFy92yxT">Discord</a>.
               </p>
               <p>Thank you!</p>
             </div>
@@ -44,7 +44,7 @@ export default function NotFound() {
                     <a href="https://twitter.com/runmedev">Twitter</a>
                   </div>
                   <div className="text-[color:var(--ifm-navbar-link-color)] hover:underline">
-                    <a href="https://discord.gg/runme">Discord</a>
+                    <a href="https://discord.gg/jFy92yxT">Discord</a>
                   </div>
                 </div>
               </div>

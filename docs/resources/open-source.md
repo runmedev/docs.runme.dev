@@ -17,4 +17,4 @@ Runme is available in five repositories on Github:
 
 ## Need help get started?
 
-For assistance or inquiries, please log any issues on [issues in Github](https://github.com/runmedev/runme/issues), or [Join our Community](https://discord.gg/runme).
+For assistance or inquiries, please log any issues on [issues in Github](https://github.com/runmedev/runme/issues), or [Join our Community](https://discord.gg/jFy92yxT).
