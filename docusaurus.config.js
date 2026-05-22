@@ -173,7 +173,7 @@ const config = {
       announcementBar: {
         id: "visr_runbooks",
         content:
-          'New: End terminal amnesia. <a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn sessions into agent-ready skills &rarr;</a>',
+          'New: Terminal sessions, transcribed. <a target="_blank" rel="noopener noreferrer" href="https://visr.dev/changelog/bottle-terminal-memories?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Preserve know-how &rarr;</a>',
         backgroundColor: "#facc15",
         textColor: "#000000",
         isCloseable: true,
