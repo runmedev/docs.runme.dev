@@ -29,15 +29,6 @@ All the code for Runme can be found in four repositories on GitHub:
 - [GitHub action](https://github.com/runmedev/runme-action)
 - [Docs](https://github.com/runmedev/docs.runme.dev)
 
-## Introduction Video
-
-A fun introduction to the problem Runme is trying to solve.
-
-<video autoPlay loop muted playsInline controls>
-  <source src="https://runme.dev/videos/hero.mp4" type="video/mp4" />
-  <source src="https://runme.dev/videos/hero.webm" type="video/webm" />
-</video>
-
 ## Runme in 2 Minutes
 
 A quick hands-on example of Runme in action.

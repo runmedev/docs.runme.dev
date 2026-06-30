@@ -24,6 +24,7 @@ Below are some available commands within Runme
 | ---------- | ---------------------------------------------------------- |
 | branch     | Suggest a branch name (aka branchGPT)                      |
 | completion | Generate the autocompletion script for the specified shell |
+| eval       | Run agent task evals with Runme                            |
 | extension  | Check your Stateful VS Code extension status               |
 | fmt        | Format a Markdown file into canonical format               |
 | help       | Help about any command                                     |
@@ -35,6 +36,8 @@ Below are some available commands within Runme
 | run        | Run a selected command                                     |
 | suggest    | Use our suggestion engine to give contextual advice        |
 | tui        | Run the interactive TUI                                    |
+
+See [Agent Task Evals](/eval) for the experimental `runme eval` command group. It is distinct from normal notebook execution and is used for evaluation task datasets, eval job evidence, comparison, and promotion workflows.
 
 ### Runme Flags
 

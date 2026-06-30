@@ -86,6 +86,19 @@ const config = {
         },
       };
     },
+    async function fullPageReloadInDev() {
+      return {
+        name: "full-page-reload-in-dev",
+        configureWebpack() {
+          return {
+            devServer: {
+              hot: false,
+              liveReload: true,
+            },
+          };
+        },
+      };
+    },
     [
       "@docusaurus/plugin-pwa",
       {
@@ -170,14 +183,14 @@ const config = {
         { property: "og:url", content: prodUrl },
         { property: "og:type", content: "website" },
       ],
-      announcementBar: {
-        id: "visr_runbooks",
-        content:
-          'New: Codex, Claude Code, or Cursor? <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn shell sessions into agent context &rarr;</a>',
-        backgroundColor: "#facc15",
-        textColor: "#000000",
-        isCloseable: true,
-      },
+      // announcementBar: {
+      //   id: "visr_runbooks",
+      //   content:
+      //     'New: Codex, Claude Code, or Cursor? <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn shell sessions into agent context &rarr;</a>',
+      //   backgroundColor: "#facc15",
+      //   textColor: "#000000",
+      //   isCloseable: true,
+      // },
       navbar: {
         logo: {
           alt: "RUNME Logo",
