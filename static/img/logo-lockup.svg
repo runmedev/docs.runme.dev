@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="40" viewBox="0 0 132 40" fill="none">
+  <rect width="40" height="40" rx="4.4" fill="#5B3ADF" />
+  <path d="M15.2 10.8L30.4 20L15.2 29.2V10.8Z" fill="white" />
+  <text
+    x="50"
+    y="20"
+    fill="#5B3ADF"
+    dominant-baseline="middle"
+    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="24"
+    font-weight="700"
+  >RUNME</text>
+</svg>

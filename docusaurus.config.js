@@ -181,17 +181,10 @@ const config = {
       navbar: {
         logo: {
           alt: "RUNME Logo",
-          src: "img/logo.svg",
+          src: "img/logo-lockup.svg",
           href: "/",
         },
         items: [
-          {
-            type: "html",
-            position: "left",
-            value: /*html*/ `<h1 class="runmeLogo">
-              <a href="${prodUrl}">RUNME</a>
-            </h1>`,
-          },
           {
             type: "doc",
             docId: "index",

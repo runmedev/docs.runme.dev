@@ -87,14 +87,6 @@ html[data-theme="dark"] {
   border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
-h1.runmeLogo {
-  font-size: 1.5rem !important;
-  line-height: 2rem;
-  font-weight: bold;
-  letter-spacing: -0.5px;
-  transform: translateX(-12px);
-}
-
 /* blog  start*/
 #fluid-typography-blog-header {
   font-size: 2rem;
@@ -160,6 +152,11 @@ h1.text-white {
 }
 
 .navbar__brand {
+  margin-right: 0;
+}
+
+.navbar__brand .navbar__logo {
+  height: 3rem;
   margin-right: 0;
 }
 
