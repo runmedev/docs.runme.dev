@@ -26,16 +26,16 @@ const options = [
 
 export default function EnvironmentOptions() {
   return (
-    <div className="grid grid-cols-2 gap-2 justify-center items-center">
+    <div className="grid grid-cols-2 gap-4 justify-center items-center">
       {options.map(({ href, title, icon }) => {
         return (
           <a
-            className="text-center shadow-md p-2 m-2 min-w-[200px] rounded"
+            className="flex flex-col items-center justify-center gap-2 text-center shadow-md p-4 m-2 min-w-[200px] rounded"
             href={href}
             title={title}
             target="_self"
           >
-            {icon({ className: "my-0 mx-auto" })}
+            {icon({ className: "my-0 flex-none" })}
             <span>{title}</span>
           </a>
         );

@@ -21,12 +21,12 @@
     "@docusaurus/plugin-pwa": "^3.10.1",
     "@docusaurus/preset-classic": "^3.10.1",
     "@mdx-js/react": "^3.1.1",
-    "clsx": "^2.1.0",
-    "fast-xml-parser": "^5.8.0",
-    "js-yaml": "^4.1.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.9.3",
+    "js-yaml": "^4.3.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-github-btn": "^1.4.0",
     "react-timeout": "^2.0.1",
     "unist-util-visit": "^5.1.0"
@@ -34,14 +34,14 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/types": "^3.10.1",
-    "@tailwindcss/postcss": "^4.3.0",
-    "@vitejs/plugin-react": "^6.0.2",
-    "autoprefixer": "^10.5.0",
-    "postcss": "^8.5.14",
-    "tailwindcss": "^4.3.0",
-    "ts-node": "^10.9.1",
+    "@tailwindcss/postcss": "^4.3.2",
+    "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
+    "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "vercel": "^54.1.0"
+    "vercel": "^54.18.6"
   },
   "browserslist": {
     "production": [
