@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import React from "react";
 
+const ENVIRONMENT_OPTION_ICON_SIZE = 80;
+
 const Bar3Icon = () => {
   return (
     <svg
@@ -833,11 +835,13 @@ const VSCodeIcon = ({ className }: { className: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={ENVIRONMENT_OPTION_ICON_SIZE}
+      height={ENVIRONMENT_OPTION_ICON_SIZE}
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className={clsx("w-24 h-24", className)}
+      className={className}
     >
       <path
         stroke-linecap="round"
@@ -852,11 +856,13 @@ const TerminalIcon = ({ className }: { className: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={ENVIRONMENT_OPTION_ICON_SIZE}
+      height={ENVIRONMENT_OPTION_ICON_SIZE}
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={clsx("w-24 h-24", className)}
+      className={className}
     >
       <path
         strokeLinecap="round"
@@ -871,10 +877,10 @@ const GlobeIcon = ({ className }: { className: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="420"
-      height="420"
+      width={ENVIRONMENT_OPTION_ICON_SIZE}
+      height={ENVIRONMENT_OPTION_ICON_SIZE}
       id="svg2"
-      className={clsx("w-24 h-24", className)}
+      className={className}
       version="1.1">
       <path
         style={{ fill: 'none', stroke: 'currentColor', strokeWidth: 20, strokeMiterlimit: 4, strokeOpacity: 1, strokeDasharray: 'none', transform: 'scale(0.2) translateX(30px)' }}
@@ -885,7 +891,7 @@ const GlobeIcon = ({ className }: { className: string }) => {
 
 const SSHIcon = ({ className }: { className: string }) => {
   return (
-<svg fill="#5b39df" width="420" height="420" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" className={clsx("w-24 h-24", className)}>
+<svg fill="#5b39df" width={ENVIRONMENT_OPTION_ICON_SIZE} height={ENVIRONMENT_OPTION_ICON_SIZE} viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" className={className}>
 <title>terminal</title>
 <path d="M0 24.344v-16.25h21.25v16.25h-21.25zM1.844 13.625l3.781-1.469v-0.844l-3.781-1.5v0.938l2.688 0.969-2.688 1v0.906zM5.969 14.719h3.719v-0.938h-3.719v0.938z"></path>
 </svg>
