@@ -58,14 +58,6 @@ A great example of this is when you specify the **mimetype**. That config metada
 <img src="/img/notebook-components.png" style={{width: "80%", display: "inline"}} alt="What is Runme" />
 <br /><br />
 
-## Runme's Architecture
-
-Runme is built on the VS Code platform, running in Codespaces, Coder's [code-server](https://github.com/coder/code-server), Google IDX, GCP Cloud Editor, Gitpod, VSCodium, etc. Under the hood, much like other notebook technologies such as Jupyter, you can read more on the [Architecture page](/resources/architecture).
-
-<br />
-<img src="/img/venn.png" style={{width: "60%", display: "inline"}} alt="What is Runme" />
-<br /><br />
-
 ## What's Next?
 
 - First, you need to [install Runme](/installation) for the client you want to use.
