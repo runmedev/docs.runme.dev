@@ -52,7 +52,7 @@ You can replace `codex` with another supported agent, such as `claude-code`, `cu
 
 ## Run With A Real Rubric
 
-Use a rubric-based task when the verifier should score multiple criteria instead of returning a single pass or fail result. The Runme repository includes a RewardKit example that grades a text-statistics task with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py). RewardKit is one way to break out reward scores by criterion; Harbor tasks can report rewards from any verifier.
+Use a rubric-based task when the verifier should score multiple criteria instead of returning a single pass or fail result. The Runme repository includes a text-statistics example built with Harbor's [RewardKit](https://www.harborframework.com/docs/rewardkit), with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py). RewardKit is one way to break out reward scores; Harbor tasks can report rewards from any verifier.
 
 Rubrics with LLM judges may require provider credentials, such as `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`. Harbor reports missing environment variables with a clear error.
 
