@@ -39,6 +39,8 @@ The demo below runs the RewardKit example dataset and records the scored eval jo
   <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.webm" type="video/webm" />
 </video>
 
+![Runme eval dashboard showing verifier rewards for a completed RewardKit task](/demos/eval/runme-eval-quickstart/runme-eval-dashboard.png)
+
 ## Prerequisites
 
 `runme eval` delegates to the optional `runme-harbor` Python adapter. Install it as an isolated tool:
