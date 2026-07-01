@@ -32,12 +32,12 @@ Runme's default eval environment runs locally, the same way a developer would ex
 
 Harbor remains the underlying eval model and runner. Runme fills the local workflow gap: run the task, inspect the job, compare against a baseline, and commit eval evidence from the same development environment where the change was made.
 
+The demo below runs the RewardKit example dataset and records the scored eval job locally.
+
 <video autoPlay loop muted playsInline controls>
   <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.mp4" type="video/mp4" />
   <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.webm" type="video/webm" />
 </video>
-
-The demo video runs the RewardKit example dataset with Codex and records the scored eval job locally. From there, you can inspect the run, compare it against a Git-tracked baseline, or promote the result as eval evidence.
 
 ## Prerequisites
 

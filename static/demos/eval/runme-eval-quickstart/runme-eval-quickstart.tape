@@ -1,10 +1,10 @@
 Set Theme "Atom"
-Set FontSize 18
+Set FontSize 20
 Set Shell zsh
 Set Width 1500
-Set Height 600
+Set Height 800
 Sleep 500ms
-Type "runme eval examples/harbor/datasets/runme-rewardkit --agent codex --model openai/gpt-5.4-mini --ak reasoning_effort=low"
+Type "runme eval examples/harbor/datasets/runme-rewardkit --agent claude-code"
 Enter
-Sleep 140s
+Sleep 90s
 Output runme-eval-quickstart.mp4
