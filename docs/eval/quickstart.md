@@ -54,7 +54,7 @@ You can replace `codex` with another supported agent, such as `claude-code`, `cu
 
 Use a rubric-based task when you want the verifier to score multiple criteria instead of returning a single pass or fail result.
 
-The Runme repository includes a RewardKit example that grades a text-statistics task with weighted criteria:
+The Runme repository includes a RewardKit example that grades a text-statistics task with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py):
 
 ```sh
 runme eval examples/harbor/datasets/runme-rewardkit \
