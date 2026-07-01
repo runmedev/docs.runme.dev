@@ -86,18 +86,18 @@ Important flags:
 
 ## `runme eval compare`
 
-Compare eval job execution summaries and matching eval results.
+Compare eval jobs for a dataset.
 
 ```sh
-runme eval compare [flags]
+runme eval compare [dataset-path] [flags]
 ```
 
-By default, Runme compares the latest Git-tracked eval job with the latest local eval job under the jobs directory.
+When `dataset-path` is omitted, Runme uses `./evals/tasks`. Runme compares the latest Git-tracked eval job for that dataset with the latest local eval job for the same dataset under the jobs directory.
 
 Important flags:
 
 - `--jobs-dir`: eval jobs directory. Defaults to `.runme/evals/jobs` under the project root.
-- `--job`: compare against a specific local eval job instead of the newest local job.
+- `--job`: compare against a specific local eval job.
 - `--base`: Git ref used to find the tracked baseline eval job. Defaults to `HEAD`.
 - `--format`: output format, either `text` or `json`. Defaults to `text`.
 - `--include-oracle`: allow comparing eval jobs that only used Harbor's built-in oracle solution runner.
@@ -106,6 +106,7 @@ Important flags:
 Behavior:
 
 - The command is read-only.
+- It filters tracked baselines, local candidates, and explicit `--job` values by dataset path.
 - It uses job counters and overlapping result rewards.
 - It prints an advisory recommendation.
 - It does not commit, promote, or enforce policy.
@@ -115,13 +116,15 @@ Behavior:
 Commit staged changes with eval job evidence.
 
 ```sh
-runme eval promote [flags]
+runme eval promote [dataset-path] [flags]
 ```
+
+When `dataset-path` is omitted, Runme uses `./evals/tasks`. Runme selects, compares, and promotes eval jobs for that dataset.
 
 Important flags:
 
 - `--job`: eval job directory to promote.
-- `--latest`: promote the latest eval job under `--jobs-dir`.
+- `--latest`: promote the latest eval job for the dataset under `--jobs-dir`.
 - `--dry-run`: print what would be committed without staging or committing.
 - `--evidence-only`: commit only the selected eval job evidence when no source changes are staged.
 - `--artifacts`: include full eval artifacts such as logs and trial outputs. These may contain sensitive information.
@@ -133,6 +136,7 @@ Important flags:
 Behavior:
 
 - Requires either `--job` or `--latest`.
+- It filters latest-job selection, explicit `--job` values, comparison baselines, and newer-job warnings by dataset path.
 - Adds eval evidence to a commit.
 - Requires staged changes unless `--evidence-only` is used.
 - Blocks promotion on comparison failures unless `--promote-anyway` is used.
