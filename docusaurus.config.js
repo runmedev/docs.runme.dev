@@ -104,6 +104,13 @@ const legacyServiceWorkerCleanupScript = `(function() {
   });
 })();`;
 
+const safeGtagScript = `(function() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function() {
+    window.dataLayer.push(arguments);
+  };
+})();`;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "RUNME",
@@ -275,6 +282,11 @@ const config = {
       tagName: "script",
       attributes: {},
       innerHTML: visrAnnouncementDismissScript,
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: safeGtagScript,
     },
     {
       tagName: "script",
