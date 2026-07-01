@@ -38,7 +38,7 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 Each eval run writes job and trial metadata under `.runme/evals/jobs` by default.
 
-## Run With A Real Agent
+## Run with A Real Agent
 
 Use a real agent when you want to evaluate an installed local agent CLI:
 
@@ -50,7 +50,7 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 You can replace `codex` with another supported agent, such as `claude-code`, `cursor-cli`, or `openclaw`, after that agent is installed and authenticated locally.
 
-## Run With A Real Rubric
+## Run with A Real Rubric
 
 Use a rubric-based task when the verifier should score multiple criteria instead of returning a single pass or fail result. The Runme repository includes a text-statistics example built with Harbor's [RewardKit](https://www.harborframework.com/docs/rewardkit), with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py). RewardKit is one way to break out reward scores; Harbor tasks can report rewards from any verifier.
 
@@ -64,7 +64,7 @@ runme eval examples/harbor/datasets/runme-rewardkit \
 
 To run the same rubric with the deterministic oracle solution runner, replace `codex` with `oracle`.
 
-## Run With A Harbor Environment
+## Run with A Harbor Environment
 
 Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment. For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 
@@ -106,7 +106,7 @@ runme eval promote --latest --dry-run
 
 The dry run prints the selected eval job, evidence mode, files to add, comparison result, and proposed commit message.
 
-## Promote With Eval Evidence
+## Promote with Eval Evidence
 
 After staging the source changes you want to promote, add eval evidence to the commit:
 
