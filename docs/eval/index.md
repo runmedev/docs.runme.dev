@@ -39,6 +39,8 @@ The demo below runs the RewardKit example dataset and records the scored eval jo
   <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.webm" type="video/webm" />
 </video>
 
+After an eval run finishes, `runme eval view` opens the local eval dashboard so you can inspect the recorded job, review task and trial details, compare reward scores, read agent and verifier logs, and open generated artifacts from the same run.
+
 ![Runme eval dashboard showing verifier rewards for a completed RewardKit task](/demos/eval/runme-eval-quickstart/runme-eval-dashboard.png)
 
 ## Prerequisites
