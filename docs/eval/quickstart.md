@@ -87,12 +87,6 @@ Open the eval dashboard for the default jobs directory:
 runme eval view
 ```
 
-To keep the dashboard from opening a browser automatically:
-
-```sh
-runme eval view --no-open
-```
-
 ## Compare Results
 
 Compare the latest local eval job against the latest Git-tracked baseline:
@@ -101,13 +95,7 @@ Compare the latest local eval job against the latest Git-tracked baseline:
 runme eval compare
 ```
 
-`runme eval compare` is read-only. It prints an advisory recommendation based on job counters and overlapping result rewards. It does not commit, promote, or enforce policy.
-
-For machine-readable output:
-
-```sh
-runme eval compare --format json
-```
+`runme eval compare` is read-only. It prints an advisory recommendation based on job counters and overlapping result rewards. It does not commit, promote, or enforce policy. Use `--format json` when you need machine-readable output.
 
 ## Preview Promotion
 
