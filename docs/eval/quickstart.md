@@ -56,6 +56,8 @@ Use a rubric-based task when you want the verifier to score multiple criteria in
 
 The Runme repository includes a RewardKit example that grades a text-statistics task with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py):
 
+Rubrics with LLM judges may require provider credentials such as `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`; Harbor reports missing environment variables with a clear error.
+
 ```sh
 runme eval examples/harbor/datasets/runme-rewardkit \
   --task-dir text-stats-reward \
