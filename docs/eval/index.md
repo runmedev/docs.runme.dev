@@ -37,7 +37,7 @@ Harbor remains the underlying eval model and runner. Runme fills the local workf
   <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.webm" type="video/webm" />
 </video>
 
-The demo runs the RewardKit example dataset with Codex and records the scored eval job locally. From there, you can inspect the run, compare it against a Git-tracked baseline, or promote the result as eval evidence.
+The demo video runs the RewardKit example dataset with Codex and records the scored eval job locally. From there, you can inspect the run, compare it against a Git-tracked baseline, or promote the result as eval evidence.
 
 ## Prerequisites
 
