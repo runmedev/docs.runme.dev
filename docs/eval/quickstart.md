@@ -7,7 +7,7 @@ title: Quickstart
 
 This quickstart runs a simple agent task eval through Runme, opens the eval dashboard, compares results, and previews promotion with eval evidence.
 
-## Install The Adapter
+## Install The Harbor Adapter
 
 `runme eval` requires the optional `runme-harbor` adapter:
 
