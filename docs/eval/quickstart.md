@@ -72,6 +72,8 @@ For Docker environment configuration and task authoring details, see Harbor's [t
 
 The RewardKit example also provides a Docker environment:
 
+`OPENAI_API_KEY` is passed explicitly because Docker runs hermetically and does not reuse your local agent OAuth session.
+
 ```sh
 OPENAI_API_KEY="$OPENAI_API_KEY" runme eval examples/harbor/datasets/runme-rewardkit \
   --task-dir text-stats-reward \
