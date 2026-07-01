@@ -92,6 +92,28 @@ Compare the latest local eval job against the latest Git-tracked baseline:
 
 ```sh
 runme eval compare
+
+# Output:
+Base:   .runme/evals/jobs/2026-07-01__15-12-00  tracked in HEAD
+Latest: .runme/evals/jobs/2026-07-01__15-17-32  local
+
+Dataset: examples/harbor/datasets/runme-rewardkit
+Agent: runme-codex
+Model: gpt-5.3-codex-spark
+Environment: runme_harbor.environment:RunmeEnvironment
+
+Metadata mismatches:
+  model: gpt-5.4-mini -> gpt-5.3-codex-spark
+
+Job:
+  completed: 1 -> 1  +0
+  errors:    0 -> 0  +0
+  evals:     1 -> 1  +0
+
+Results:
+  runme-rewardkit: reward 1.000 -> 0.944  -0.056
+
+Recommendation: metadata differs; review mismatches before promotion.
 ```
 
 `runme eval compare` is read-only. It prints an advisory recommendation based on job counters and overlapping result rewards. It does not commit, promote, or enforce policy. Use `--format json` when you need machine-readable output.
@@ -102,6 +124,33 @@ Before creating a commit, preview which eval evidence would be added:
 
 ```sh
 runme eval promote --latest --dry-run
+
+# Output:
+Selected eval job: .runme/evals/jobs/2026-07-01__15-17-32
+Selection: latest job under .runme/evals/jobs
+Evidence mode: compact
+Files to add:
+  .runme/evals/jobs/2026-07-01__15-17-32/config.harbor.json
+  .runme/evals/jobs/2026-07-01__15-17-32/result.json
+  ...
+
+Comparison:
+Base:   .runme/evals/jobs/2026-07-01__15-12-00  tracked in HEAD
+Latest: .runme/evals/jobs/2026-07-01__15-17-32  local
+
+Metadata mismatches:
+  model: gpt-5.4-mini -> gpt-5.3-codex-spark
+
+Results:
+  runme-rewardkit: reward 1.000 -> 0.944  -0.056
+
+Promotion gate: blocked
+Reason: metadata differs; review mismatches or pass --promote-anyway to promote anyway
+
+Proposed commit message:
+
+Promote changes verified by task eval
+...
 ```
 
 The dry run prints the selected eval job, evidence mode, files to add, comparison result, and proposed commit message.
