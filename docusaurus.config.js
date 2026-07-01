@@ -7,6 +7,7 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const siteName = "Runme.dev";
 const twitterHandle = "@statefulhq";
 const prodUrl = "https://runme.dev";
+const isProd = process.env.NODE_ENV === "production";
 const keywords = [
   "runme",
   "readme",
@@ -48,6 +49,63 @@ const visrAnnouncementDismissScript = `(function() {
   } catch (err) {
     setDismissedAttribute(false);
   }
+})();`;
+
+const devServiceWorkerCleanupScript = `(function() {
+  var reloadKey = "runme.devSwCleanupReloaded";
+
+  function clearReloadMarker() {
+    try {
+      window.sessionStorage.removeItem(reloadKey);
+    } catch (err) {}
+  }
+
+  if (
+    !("serviceWorker" in navigator) ||
+    !/^(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)$/.test(window.location.hostname)
+  ) {
+    clearReloadMarker();
+    return;
+  }
+
+  Promise.all([
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      return Promise.all(
+        registrations.map(function(registration) {
+          return registration.unregister();
+        }),
+      ).then(function() {
+        return registrations.length > 0;
+      });
+    }),
+    "caches" in window
+      ? window.caches.keys().then(function(keys) {
+          return Promise.all(
+            keys.map(function(key) {
+              return window.caches.delete(key);
+            }),
+          ).then(function() {
+            return keys.length > 0;
+          });
+        })
+      : Promise.resolve(false),
+  ]).then(function(results) {
+    var clearedState = results.some(Boolean);
+    var alreadyReloaded = false;
+
+    try {
+      alreadyReloaded = window.sessionStorage.getItem(reloadKey) === "true";
+    } catch (err) {}
+
+    if (clearedState && !alreadyReloaded) {
+      try {
+        window.sessionStorage.setItem(reloadKey, "true");
+      } catch (err) {}
+      window.location.reload();
+    } else {
+      clearReloadMarker();
+    }
+  });
 })();`;
 
 /** @type {import('@docusaurus/types').Config} */
@@ -99,34 +157,38 @@ const config = {
         },
       };
     },
-    [
-      "@docusaurus/plugin-pwa",
-      {
-        debug: true,
-        offlineModeActivationStrategies: [
-          "appInstalled",
-          "standalone",
-          "queryString",
-        ],
-        pwaHead: [
-          {
-            tagName: "link",
-            rel: "icon",
-            href: "/img/logo.svg",
-          },
-          {
-            tagName: "link",
-            rel: "manifest",
-            href: "/manifest.json", // your PWA manifest
-          },
-          {
-            tagName: "meta",
-            name: "theme-color",
-            content: "rgb(88, 57, 218)",
-          },
-        ],
-      },
-    ],
+    ...(isProd
+      ? [
+          [
+            "@docusaurus/plugin-pwa",
+            {
+              debug: true,
+              offlineModeActivationStrategies: [
+                "appInstalled",
+                "standalone",
+                "queryString",
+              ],
+              pwaHead: [
+                {
+                  tagName: "link",
+                  rel: "icon",
+                  href: "/img/logo.svg",
+                },
+                {
+                  tagName: "link",
+                  rel: "manifest",
+                  href: "/manifest.json", // your PWA manifest
+                },
+                {
+                  tagName: "meta",
+                  name: "theme-color",
+                  content: "rgb(88, 57, 218)",
+                },
+              ],
+            },
+          ],
+        ]
+      : []),
   ],
 
   presets: [
@@ -250,6 +312,15 @@ const config = {
       attributes: {},
       innerHTML: visrAnnouncementDismissScript,
     },
+    ...(!isProd
+      ? [
+          {
+            tagName: "script",
+            attributes: {},
+            innerHTML: devServiceWorkerCleanupScript,
+          },
+        ]
+      : []),
     {
       tagName: "link",
       attributes: {
