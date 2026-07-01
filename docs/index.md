@@ -29,15 +29,6 @@ All the code for Runme can be found in four repositories on GitHub:
 - [GitHub action](https://github.com/runmedev/runme-action)
 - [Docs](https://github.com/runmedev/docs.runme.dev)
 
-## Introduction Video
-
-A fun introduction to the problem Runme is trying to solve.
-
-<video autoPlay loop muted playsInline controls>
-  <source src="https://runme.dev/videos/hero.mp4" type="video/mp4" />
-  <source src="https://runme.dev/videos/hero.webm" type="video/webm" />
-</video>
-
 ## Runme in 2 Minutes
 
 A quick hands-on example of Runme in action.
@@ -65,14 +56,6 @@ A great example of this is when you specify the **mimetype**. That config metada
 
 <br />
 <img src="/img/notebook-components.png" style={{width: "80%", display: "inline"}} alt="What is Runme" />
-<br /><br />
-
-## Runme's Architecture
-
-Runme is built on the VS Code platform, running in Codespaces, Coder's [code-server](https://github.com/coder/code-server), Google IDX, GCP Cloud Editor, Gitpod, VSCodium, etc. Under the hood, much like other notebook technologies such as Jupyter, you can read more on the [Architecture page](/resources/architecture).
-
-<br />
-<img src="/img/venn.png" style={{width: "60%", display: "inline"}} alt="What is Runme" />
 <br /><br />
 
 ## What's Next?

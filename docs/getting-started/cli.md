@@ -73,6 +73,8 @@ Feedback:
   For issues and questions join the Runme community at https://discord.gg/jFy92yxT
 ```
 
+Runme also includes the experimental [`runme eval`](/eval) command group for agent task eval workflows. `runme eval` is distinct from normal notebook execution: it runs evaluation task datasets, collects eval job evidence, compares results, and can promote code changes with eval output.
+
 The base command for the Runme CLI is runme. For example, to run an interactive Terminal User Interface(TUI), the command below does that.
 
 ```sh {"id":"01J44HV6XGWQ49QVGJPWG0CM7R"}

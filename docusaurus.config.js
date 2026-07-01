@@ -50,6 +50,67 @@ const visrAnnouncementDismissScript = `(function() {
   }
 })();`;
 
+const legacyServiceWorkerCleanupScript = `(function() {
+  var reloadKey = "runme.legacySwCleanupReloaded";
+
+  function clearReloadMarker() {
+    try {
+      window.sessionStorage.removeItem(reloadKey);
+    } catch (err) {}
+  }
+
+  if (!("serviceWorker" in navigator)) {
+    clearReloadMarker();
+    return;
+  }
+
+  Promise.all([
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      return Promise.all(
+        registrations.map(function(registration) {
+          return registration.unregister();
+        }),
+      ).then(function() {
+        return registrations.length > 0;
+      });
+    }),
+    "caches" in window
+      ? window.caches.keys().then(function(keys) {
+          return Promise.all(
+            keys.map(function(key) {
+              return window.caches.delete(key);
+            }),
+          ).then(function() {
+            return keys.length > 0;
+          });
+        })
+      : Promise.resolve(false),
+  ]).then(function(results) {
+    var clearedState = results.some(Boolean);
+    var alreadyReloaded = false;
+
+    try {
+      alreadyReloaded = window.sessionStorage.getItem(reloadKey) === "true";
+    } catch (err) {}
+
+    if (clearedState && !alreadyReloaded) {
+      try {
+        window.sessionStorage.setItem(reloadKey, "true");
+      } catch (err) {}
+      window.location.reload();
+    } else {
+      clearReloadMarker();
+    }
+  });
+})();`;
+
+const safeGtagScript = `(function() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function() {
+    window.dataLayer.push(arguments);
+  };
+})();`;
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "RUNME",
@@ -86,34 +147,19 @@ const config = {
         },
       };
     },
-    [
-      "@docusaurus/plugin-pwa",
-      {
-        debug: true,
-        offlineModeActivationStrategies: [
-          "appInstalled",
-          "standalone",
-          "queryString",
-        ],
-        pwaHead: [
-          {
-            tagName: "link",
-            rel: "icon",
-            href: "/img/logo.svg",
-          },
-          {
-            tagName: "link",
-            rel: "manifest",
-            href: "/manifest.json", // your PWA manifest
-          },
-          {
-            tagName: "meta",
-            name: "theme-color",
-            content: "rgb(88, 57, 218)",
-          },
-        ],
-      },
-    ],
+    async function fullPageReloadInDev() {
+      return {
+        name: "full-page-reload-in-dev",
+        configureWebpack() {
+          return {
+            devServer: {
+              hot: false,
+              liveReload: true,
+            },
+          };
+        },
+      };
+    },
   ],
 
   presets: [
@@ -170,14 +216,14 @@ const config = {
         { property: "og:url", content: prodUrl },
         { property: "og:type", content: "website" },
       ],
-      announcementBar: {
-        id: "visr_runbooks",
-        content:
-          'New: Codex, Claude Code, or Cursor? <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn shell sessions into agent context &rarr;</a>',
-        backgroundColor: "#facc15",
-        textColor: "#000000",
-        isCloseable: true,
-      },
+      // announcementBar: {
+      //   id: "visr_runbooks",
+      //   content:
+      //     'New: Codex, Claude Code, or Cursor? <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn shell sessions into agent context &rarr;</a>',
+      //   backgroundColor: "#facc15",
+      //   textColor: "#000000",
+      //   isCloseable: true,
+      // },
       navbar: {
         logo: {
           alt: "RUNME Logo",
@@ -236,6 +282,16 @@ const config = {
       tagName: "script",
       attributes: {},
       innerHTML: visrAnnouncementDismissScript,
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: safeGtagScript,
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: legacyServiceWorkerCleanupScript,
     },
     {
       tagName: "link",
