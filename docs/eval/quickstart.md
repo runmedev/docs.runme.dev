@@ -60,6 +60,18 @@ Rubrics with LLM judges may require provider credentials, such as `OPENAI_API_KE
 runme eval examples/harbor/datasets/runme-rewardkit \
   --task-dir text-stats-reward \
   --agent codex
+
+# Output:
+runme-rewardkit • runme-codex • gpt-5.3-codex-spark
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┓
+┃ Trials ┃ Exceptions ┃ Correctness ┃ Reward ┃ Structure ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━┩
+│      1 │          0 │       1.000 │  0.944 │     0.545 │
+└────────┴────────────┴─────────────┴────────┴───────────┘
+
+Job Info
+Total runtime: 8s
+Results written to .runme/evals/jobs/2026-07-01__15-45-58/result.json
 ```
 
 To run the same rubric with the deterministic oracle solution runner, replace `codex` with `oracle`.
