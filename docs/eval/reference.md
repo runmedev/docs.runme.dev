@@ -34,7 +34,7 @@ Important flags:
 - `--agent-env`, `--ae`: environment variable to pass to the agent in `KEY=VALUE` format. Can be repeated.
 - `--agent-kwarg`, `--ak`: Harbor agent kwarg. Can be repeated.
 - `--model`: Harbor agent model.
-- `--env`, `-e`: Harbor environment to use. When omitted, Runme's environment is used. Pass a Harbor environment name, such as `docker`, when the selected task dataset provides one.
+- `--env`, `-e`: Harbor environment to use. When omitted, Runme's environment is used. Pass a Harbor environment name when the selected task dataset provides one. For Docker environment configuration, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 - `--runme-bin`: Runme binary used by the Harbor environment.
 - `--runme-arg`: additional Runme argument used by the Harbor environment. Can be repeated.
 - `--runme-harbor-bin`: `runme-harbor` executable.

@@ -54,6 +54,8 @@ You can replace `codex` with another supported agent, such as `claude-code`, `cu
 
 Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment.
 
+For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
+
 For example, a task that provides a Docker environment can be run with:
 
 ```sh
