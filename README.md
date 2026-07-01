@@ -65,7 +65,7 @@ This command generates static content into the `build` directory and can be serv
 ### Upgrade dependencies
 
 ```sh {"id":"01HY0WFKM0C6QHVG0DF42AFZMM","name":"upgrade"}
-npm i @docusaurus/core@latest @docusaurus/plugin-pwa@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest @docusaurus/types@latest
+npm i @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest @docusaurus/types@latest
 ```
 
 ### Serve locally

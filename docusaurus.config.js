@@ -7,7 +7,6 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 const siteName = "Runme.dev";
 const twitterHandle = "@statefulhq";
 const prodUrl = "https://runme.dev";
-const isProd = process.env.NODE_ENV === "production";
 const keywords = [
   "runme",
   "readme",
@@ -51,8 +50,8 @@ const visrAnnouncementDismissScript = `(function() {
   }
 })();`;
 
-const devServiceWorkerCleanupScript = `(function() {
-  var reloadKey = "runme.devSwCleanupReloaded";
+const legacyServiceWorkerCleanupScript = `(function() {
+  var reloadKey = "runme.legacySwCleanupReloaded";
 
   function clearReloadMarker() {
     try {
@@ -60,10 +59,7 @@ const devServiceWorkerCleanupScript = `(function() {
     } catch (err) {}
   }
 
-  if (
-    !("serviceWorker" in navigator) ||
-    !/^(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0)$/.test(window.location.hostname)
-  ) {
+  if (!("serviceWorker" in navigator)) {
     clearReloadMarker();
     return;
   }
@@ -157,38 +153,6 @@ const config = {
         },
       };
     },
-    ...(isProd
-      ? [
-          [
-            "@docusaurus/plugin-pwa",
-            {
-              debug: true,
-              offlineModeActivationStrategies: [
-                "appInstalled",
-                "standalone",
-                "queryString",
-              ],
-              pwaHead: [
-                {
-                  tagName: "link",
-                  rel: "icon",
-                  href: "/img/logo.svg",
-                },
-                {
-                  tagName: "link",
-                  rel: "manifest",
-                  href: "/manifest.json", // your PWA manifest
-                },
-                {
-                  tagName: "meta",
-                  name: "theme-color",
-                  content: "rgb(88, 57, 218)",
-                },
-              ],
-            },
-          ],
-        ]
-      : []),
   ],
 
   presets: [
@@ -312,15 +276,11 @@ const config = {
       attributes: {},
       innerHTML: visrAnnouncementDismissScript,
     },
-    ...(!isProd
-      ? [
-          {
-            tagName: "script",
-            attributes: {},
-            innerHTML: devServiceWorkerCleanupScript,
-          },
-        ]
-      : []),
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: legacyServiceWorkerCleanupScript,
+    },
     {
       tagName: "link",
       attributes: {
