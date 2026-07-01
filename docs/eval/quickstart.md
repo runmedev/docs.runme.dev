@@ -7,7 +7,7 @@ title: Quickstart
 
 This quickstart runs a simple agent task eval through Runme, opens the eval dashboard, compares results, and previews promotion with eval evidence.
 
-## Install The Harbor Adapter
+## Install the Harbor adapter
 
 `runme eval` requires the optional `runme-harbor` adapter:
 
@@ -24,7 +24,7 @@ runme --version
 runme eval --help
 ```
 
-## Run A Smoke Eval
+## Run a smoke eval
 
 The examples below use task datasets from the Runme repository. Clone `runmedev/runme` or use an existing checkout, then run the commands from the Runme repository root.
 
@@ -38,7 +38,7 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 Each eval run writes job and trial metadata under `.runme/evals/jobs` by default.
 
-## Run with A Real Agent
+## Run with a real agent
 
 Use a real agent when you want to evaluate an installed local agent CLI:
 
@@ -50,7 +50,7 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 You can replace `codex` with another supported agent, such as `claude-code`, `cursor-cli`, or `openclaw`, after that agent is installed and authenticated locally.
 
-## Run with A Real Rubric
+## Run with a real rubric
 
 Use a rubric-based task when the verifier should score multiple criteria instead of returning a single pass or fail result. The Runme repository includes a text-statistics example built with Harbor's [RewardKit](https://www.harborframework.com/docs/rewardkit), with weighted criteria defined in the task's [rubric code](https://github.com/runmedev/runme/blob/main/examples/harbor/datasets/runme-rewardkit/text-stats-reward/tests/criteria.py). RewardKit is one way to break out reward scores; Harbor tasks can report rewards from any verifier.
 
@@ -64,7 +64,7 @@ runme eval examples/harbor/datasets/runme-rewardkit \
 
 To run the same rubric with the deterministic oracle solution runner, replace `codex` with `oracle`.
 
-## Run with A Harbor Environment
+## Run with a Harbor environment
 
 Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment. For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 
@@ -78,7 +78,7 @@ OPENAI_API_KEY="$OPENAI_API_KEY" runme eval examples/harbor/datasets/runme-rewar
   --env docker
 ```
 
-## View Eval Jobs
+## View eval jobs
 
 Open the eval dashboard for the default jobs directory:
 
@@ -86,7 +86,7 @@ Open the eval dashboard for the default jobs directory:
 runme eval view
 ```
 
-## Compare Results
+## Compare results
 
 Compare the latest local eval job against the latest Git-tracked baseline:
 
@@ -96,7 +96,7 @@ runme eval compare
 
 `runme eval compare` is read-only. It prints an advisory recommendation based on job counters and overlapping result rewards. It does not commit, promote, or enforce policy. Use `--format json` when you need machine-readable output.
 
-## Preview Promotion
+## Preview promotion
 
 Before creating a commit, preview which eval evidence would be added:
 
@@ -106,7 +106,7 @@ runme eval promote --latest --dry-run
 
 The dry run prints the selected eval job, evidence mode, files to add, comparison result, and proposed commit message.
 
-## Promote with Eval Evidence
+## Promote with eval evidence
 
 After staging the source changes you want to promote, add eval evidence to the commit:
 

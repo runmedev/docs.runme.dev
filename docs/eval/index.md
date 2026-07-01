@@ -1,10 +1,10 @@
 ---
 sidebar_position: 99
-title: Task Evals
-sidebar_label: Agent Task Evals (Experimental)
+title: Task evals
+sidebar_label: Agent task evals (experimental)
 ---
 
-# Task Evals
+# Task evals
 
 :::caution Experimental
 
@@ -16,13 +16,13 @@ sidebar_label: Agent Task Evals (Experimental)
 
 It builds on [Harbor's task, dataset, trial, and job model](https://www.harborframework.com/docs), but Runme presents the workflow through the `runme eval` CLI.
 
-:::info Distinct From Notebook Execution
+:::info Distinct from notebook execution
 
 `runme eval` is distinct from Runme's notebook execution workflow. It does not run Markdown cells from a runbook. Instead, it runs task datasets that ask agents such as Codex, Claude Code, Cursor CLI, OpenClaw, or custom Harbor-compatible agents to complete concrete tasks in a local project environment. Each task defines how to set up the work, what the agent should do, and the verifier that scores the final result and, when relevant, the path the agent took. `runme eval` records those attempts as eval jobs, compares rewards against Git-tracked baselines, and can promote changes with eval evidence.
 
 :::
 
-## Why Use `runme eval`?
+## Why use `runme eval`?
 
 Use `runme eval` to smoke test and validate local AI agent workflows with repeatable eval tasks.
 
