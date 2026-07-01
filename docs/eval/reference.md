@@ -7,7 +7,7 @@ title: Command Reference
 
 `runme eval` is an experimental command group for running repeatable task datasets against local coding agents.
 
-It builds on Harbor's task, dataset, trial, and job model, but Runme presents the workflow through the `runme eval` CLI.
+It builds on [Harbor's task, dataset, trial, and job model](https://www.harborframework.com/docs), but Runme presents the workflow through the `runme eval` CLI.
 
 :::info Distinct From Notebook Execution
 
