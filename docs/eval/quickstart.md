@@ -116,14 +116,14 @@ runme eval promote --latest
 
 By default, promotion records compact eval evidence. Use `--artifacts` only when you need full logs and trial outputs; artifacts can contain sensitive information.
 
-If comparison blocks promotion and you intentionally want to continue, use:
-
-```sh
-runme eval promote --latest --promote-anyway
-```
-
 To commit only eval evidence when no source changes are staged:
 
 ```sh
 runme eval promote --latest --evidence-only
+```
+
+If comparison blocks promotion and you intentionally want to continue, use:
+
+```sh
+runme eval promote --latest --promote-anyway
 ```
