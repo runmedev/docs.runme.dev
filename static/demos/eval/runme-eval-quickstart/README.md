@@ -2,7 +2,7 @@
 
 VHS source: `runme-eval-quickstart.tape`
 
-Rendered video: `runme-eval-quickstart.mp4`
+Rendered videos: `runme-eval-quickstart.mp4`, `runme-eval-quickstart.webm`
 
 Regenerate from this directory:
 

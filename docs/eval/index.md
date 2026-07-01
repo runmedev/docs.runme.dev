@@ -32,6 +32,11 @@ Runme's default eval environment runs locally, the same way a developer would ex
 
 Harbor remains the underlying eval model and runner. Runme fills the local workflow gap: run the task, inspect the job, compare against a baseline, and commit eval evidence from the same development environment where the change was made.
 
+<video autoPlay loop muted playsInline controls>
+  <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.mp4" type="video/mp4" />
+  <source src="/demos/eval/runme-eval-quickstart/runme-eval-quickstart.webm" type="video/webm" />
+</video>
+
 ## Prerequisites
 
 `runme eval` delegates to the optional `runme-harbor` Python adapter. Install it as an isolated tool:
