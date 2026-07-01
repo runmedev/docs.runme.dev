@@ -34,7 +34,7 @@ Important flags:
 - `--agent-env`, `--ae`: environment variable to pass to the agent in `KEY=VALUE` format. Can be repeated.
 - `--agent-kwarg`, `--ak`: Harbor agent kwarg. Can be repeated.
 - `--model`: Harbor agent model.
-- `--env`, `-e`: Harbor environment to use. Defaults to Runme's Harbor environment.
+- `--env`, `-e`: Harbor environment to use. When omitted, Runme's environment is used. Pass a Harbor environment name, such as `docker`, when the selected task dataset provides one.
 - `--runme-bin`: Runme binary used by the Harbor environment.
 - `--runme-arg`: additional Runme argument used by the Harbor environment. Can be repeated.
 - `--runme-harbor-bin`: `runme-harbor` executable.
@@ -49,6 +49,25 @@ Supported agents:
 - `openclaw`
 
 External agent runs require the selected agent CLI to be installed and authenticated locally.
+
+## Runtime Environment Paths
+
+Runme exposes runtime path metadata to task and verifier commands as environment variables.
+
+Use these variables in task scripts, verifiers, and artifact writers instead of hardcoding workspace, log, or reward paths:
+
+- `RUNME_TASK_WORKDIR`: resolved task workspace.
+- `RUNME_TASK_DIR`: task definition directory.
+- `RUNME_TASK_NAME`: task name.
+- `RUNME_TESTS_DIR`: uploaded verifier tests directory.
+- `RUNME_LOGS_DIR`: base trial logs directory.
+- `RUNME_AGENT_LOG_DIR`: agent logs directory.
+- `RUNME_ARTIFACTS_DIR`: artifact output directory.
+- `RUNME_VERIFIER_DIR`: verifier output directory.
+- `RUNME_REWARD_PATH`: canonical reward JSON path.
+- `RUNME_REWARD_DETAILS_PATH`: optional detailed reward JSON path.
+
+Runtime path variables are set by Runme and take precedence over task environment values with the same names.
 
 ## `runme eval view`
 

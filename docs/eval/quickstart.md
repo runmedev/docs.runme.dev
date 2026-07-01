@@ -50,6 +50,19 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 You can replace `codex` with another supported agent, such as `claude-code`, `cursor-cli`, or `openclaw`, after that agent is installed and authenticated locally.
 
+## Run With A Harbor Environment
+
+Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment.
+
+For example, a task that provides a Docker environment can be run with:
+
+```sh
+OPENAI_API_KEY="$OPENAI_API_KEY" runme eval \
+  --agent codex \
+  --model openai/gpt-5.4-mini \
+  --env docker
+```
+
 ## View Eval Jobs
 
 Open the eval dashboard for the default jobs directory:
