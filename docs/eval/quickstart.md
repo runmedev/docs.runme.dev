@@ -66,13 +66,9 @@ To run the same rubric with the deterministic oracle solution runner, replace `c
 
 ## Run With A Harbor Environment
 
-Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment.
+Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment. For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 
-For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
-
-The RewardKit example also provides a Docker environment:
-
-`OPENAI_API_KEY` is passed explicitly because Docker runs hermetically and does not reuse your local agent OAuth session.
+The RewardKit example also provides a Docker environment. Pass `OPENAI_API_KEY` explicitly because Docker runs hermetically and does not reuse your local agent OAuth session:
 
 ```sh
 OPENAI_API_KEY="$OPENAI_API_KEY" runme eval examples/harbor/datasets/runme-rewardkit \
