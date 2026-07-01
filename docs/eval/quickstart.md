@@ -50,6 +50,20 @@ runme eval examples/harbor/datasets/runme-smoke \
 
 You can replace `codex` with another supported agent, such as `claude-code`, `cursor-cli`, or `openclaw`, after that agent is installed and authenticated locally.
 
+## Run With A Real Rubric
+
+Use a rubric-based task when you want the verifier to score multiple criteria instead of returning a single pass or fail result.
+
+The Runme repository includes a RewardKit example that grades a text-statistics task with weighted criteria:
+
+```sh
+runme eval examples/harbor/datasets/runme-rewardkit \
+  --task-dir text-stats-reward \
+  --agent codex
+```
+
+To run the same rubric with the deterministic oracle solution runner, replace `codex` with `oracle`.
+
 ## Run With A Harbor Environment
 
 Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment.
