@@ -70,10 +70,11 @@ Use `--env` to select one of the Harbor environments provided by the task datase
 
 For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 
-For example, a task that provides a Docker environment can be run with:
+The RewardKit example also provides a Docker environment:
 
 ```sh
-OPENAI_API_KEY="$OPENAI_API_KEY" runme eval \
+OPENAI_API_KEY="$OPENAI_API_KEY" runme eval examples/harbor/datasets/runme-rewardkit \
+  --task-dir text-stats-reward \
   --agent codex \
   --model openai/gpt-5.4-mini \
   --env docker
