@@ -48,7 +48,7 @@ Supported agents:
 - `cursor-cli`
 - `openclaw`
 
-External agent runs require the selected agent CLI to be installed and authenticated locally.
+External agent runs require the selected agent CLI to be installed and authenticated locally. Agent harness support is limited to the CLIs currently tested with `runme eval`; if a harness is missing, please [open a GitHub issue](http://github.com/runmedev/runme/issues/new) with the CLI name, install instructions, and local authentication requirements.
 
 ## Runtime environment paths
 
