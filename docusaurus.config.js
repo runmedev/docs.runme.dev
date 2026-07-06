@@ -216,14 +216,14 @@ const config = {
         { property: "og:url", content: prodUrl },
         { property: "og:type", content: "website" },
       ],
-      // announcementBar: {
-      //   id: "visr_runbooks",
-      //   content:
-      //     'New: Codex, Claude Code, or Cursor? <a target="_blank" rel="noopener noreferrer" href="https://console.visr.dev?utm_source=docs.runme.dev&utm_medium=docs&utm_campaign=announcement_bar">Turn shell sessions into agent context &rarr;</a>',
-      //   backgroundColor: "#facc15",
-      //   textColor: "#000000",
-      //   isCloseable: true,
-      // },
+      announcementBar: {
+        id: "runme_eval_agents_post",
+        content:
+          'Deploying workflows into agents? <a target="_blank" rel="noopener noreferrer" href="https://runme.dev/blog/runme-eval">Test them like code &rarr;</a>',
+        backgroundColor: "#facc15",
+        textColor: "#000000",
+        isCloseable: true,
+      },
       navbar: {
         logo: {
           alt: "RUNME Logo",
