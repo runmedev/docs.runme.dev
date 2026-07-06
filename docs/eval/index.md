@@ -24,13 +24,15 @@ It builds on [Harbor's task, dataset, trial, and job model](https://www.harborfr
 
 ## Why use `runme eval`?
 
-Use `runme eval` to smoke test and validate local AI agent workflows with repeatable eval tasks.
+Use `runme eval` when you want to prove an AI agent workflow from the same place you develop it: close to the repo, the task definition, the agent configuration, and the evidence you plan to review or promote.
 
-Runme's default eval environment runs locally, the same way a developer would experience the agent and project on their machine. That makes it useful for individual and team-scale development loops where you want realistic local behavior without first moving into a scaled-out or hermetic execution setup.
+Harbor remains the underlying eval model and runner. It provides the task, dataset, trial, job, and artifact concepts that make agent evaluation concrete. Runme builds on that model for workflows deployed into existing agent harnesses such as Codex, Claude Code, Cursor CLI, or OpenClaw. It is not trying to replace agent SDKs or benchmark infrastructure for building new agents.
 
-`runme eval` also uses Git as a simple eval tracking model. Eval jobs can be committed with the code they validate, so future runs can compare a local candidate against the latest Git-tracked baseline.
+Runme adds the repo-local workflow around Harbor: stage a working directory, run the agent where the project already lives, inspect the recorded job, compare the result against a baseline, and promote eval evidence with the code it validates.
 
-Harbor remains the underlying eval model and runner. Runme fills the local workflow gap: run the task, inspect the job, compare against a baseline, and commit eval evidence from the same development environment where the change was made.
+That makes `runme eval` useful for the inner development loop. Authors can create, run, inspect, and improve eval tasks against real repo state and locally authenticated agent CLIs before moving the same task into CI, Docker, or larger benchmark infrastructure.
+
+Git provides the promotion trail. Eval jobs can be committed with the source changes they validate, so future runs can compare a local candidate against the latest Git-tracked baseline and show whether the workflow got better, worse, or just different.
 
 The demo below runs the RewardKit example dataset and records the scored eval job locally.
 
