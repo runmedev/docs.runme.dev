@@ -36,6 +36,8 @@ That makes `runme eval` useful for the inner development loop. Authors can creat
 
 When a Harbor task sets `[environment].workdir` to an absolute `/app/...` path, Runme can map that path back into the local Git workspace. The default Runme environment stages the mapped directory into each trial workspace so local agent harnesses work against an isolated copy. Docker-based Harbor runs mirror the same directory into the task's `environment/workdir` directory, where Docker setup can include it in the task environment.
 
+### Git-backed promotion
+
 Git provides the promotion trail. Eval jobs can be committed with the source changes they validate, so future runs can compare a local candidate against the latest Git-tracked baseline and show whether the workflow got better, worse, or just different.
 
 The demo below runs the RewardKit example dataset and records the scored eval job locally.
