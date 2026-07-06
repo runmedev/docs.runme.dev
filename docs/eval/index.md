@@ -63,6 +63,12 @@ External agent runs require the selected agent CLI to be installed and authentic
 - `cursor-cli`
 - `openclaw`
 
+:::note
+
+External agent harness support is limited to the CLIs currently tested with `runme eval`. If an agent harness is missing, please [open a GitHub issue](http://github.com/runmedev/runme/issues/new) with the CLI name, install instructions, and any local authentication requirements.
+
+:::
+
 ## Defaults
 
 When you run `runme eval` without extra path configuration, Runme uses these defaults:
