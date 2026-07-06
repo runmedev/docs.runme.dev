@@ -69,6 +69,19 @@ Use these variables in task scripts, verifiers, and artifact writers instead of 
 
 Runtime path variables are set by Runme and take precedence over task environment values with the same names.
 
+### Workdir staging
+
+Harbor's `[environment].workdir` sets the default working directory for task command execution. Runme also uses that value to stage repo-local task state when the path can be mapped back to the current Git workspace.
+
+Runme stages only absolute `/app/...` workdir paths. Empty values, relative paths, `/app`, missing directories, and paths outside the workspace are left alone.
+
+Staging depends on the selected environment:
+
+- When `--env` is omitted, Runme uses its Harbor environment and stages the mapped workdir into the trial workspace. `RUNME_TASK_WORKDIR` points at that staged directory.
+- When `--env docker` is selected, Runme mirrors the mapped workdir into the task's `environment/workdir` directory before delegating to Harbor. Docker-based setup can then include that directory from the task environment.
+
+Add `**/environment/workdir/` to `.gitignore` when Docker workdir staging is used. The staged copy is generated eval state, not source.
+
 ## `runme eval view`
 
 View eval jobs in the dashboard.
