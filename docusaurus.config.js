@@ -219,7 +219,7 @@ const config = {
       announcementBar: {
         id: "runme_eval_agents_post",
         content:
-          'Deploying workflows into agents? <a target="_blank" rel="noopener noreferrer" href="https://runme.dev/blog/runme-eval">Test them like code &rarr;</a>',
+          '<a target="_blank" rel="noopener noreferrer" href="https://runme.dev/blog/runme-eval">Task evals for the other 99% of agent users &rarr;</a>',
         backgroundColor: "#facc15",
         textColor: "#000000",
         isCloseable: true,
