@@ -6,7 +6,7 @@ title: Security
 
 ## Telemetry and Connection to home.runme.dev
 
-The connection to `home.runme.dev:443` is part of Runme's telemetry system, which is used to collect anonymous usage data for improving the product. All data collected is free of personally identifiable information (PII), ensuring that user privacy is respected.
+The connection to `home.runme.dev:443` is part of Runme's telemetry system, which is used to collect anonymous, coarse usage data for improving the product. Runme uses separate routes for CLI telemetry and Kernel/server startup telemetry. All data collected is free of personally identifiable information (PII), ensuring that user privacy is respected.
 
 The telemetry system is designed similarly to an anonymous tracking pixel, a common method used by many open-source projects to gather basic, non-intrusive metrics. Stateful runs the open-source Runme kernel, and this telemetry is part of maintaining and enhancing the open-core functionality of the platform.
 
