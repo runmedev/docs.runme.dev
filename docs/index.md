@@ -12,9 +12,9 @@ The goal of Runme is to enable engineers to capture operational processes as rel
 
 Runme makes Markdown documentation actually runnable. It is a cloud-native shell kernel with a notebook, editor, terminal, and CLI interface. Runme helps you build and curate Notebooks and also run them, making it easy to automate step-by-step instructions, especially in cloud-native environments. Runme Notebooks are perfect for capturing and persisting operational knowledge, making operational docs reliable and less likely to become outdated.
 
-Another way to think about it:
-
-> 💡 Runme is like Jupyter but with a shell/bash kernel and lightweight dependencies.
+<Infobox type="sidenote" title="New: Runme Eval">
+Notebooks are linear trajectories through a task. [`runme eval`](/eval) expands that model beyond Markdown, so you can define, replay, and score how agents and workflows reach an outcome.
+</Infobox>
 
 ## Built on Open Technologies & Standards
 
