@@ -43,7 +43,7 @@ You can easily switch between Runme's notebook UI and the standard Markdown text
 
 ## Why is the extension connecting to home.runme[.]dev on port 443?
 
-The connection to home.runme.dev:443 is related to telemetry, as documented [here](https://docs.runme.dev/configuration/telemetry). Stateful is open-core, and all telemetry data is free of personally identifiable information (PII). If you'd like to disable telemetry, follow the steps in the documentation.
+The connection to home.runme.dev:443 is related to telemetry, as documented [here](https://docs.runme.dev/configuration/telemetry). Stateful is open-core, and Runme's telemetry is anonymous and free of personally identifiable information (PII). If you'd like to disable telemetry, follow the steps in the documentation.
 
 Stateful uses the open-source Runme kernel, and telemetry is implemented similarly to an anonymous tracking pixel.
 
