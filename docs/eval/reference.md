@@ -5,7 +5,7 @@ title: Command reference
 
 # Task eval command reference
 
-`runme eval` is an experimental command group for running repeatable task datasets against local coding agents.
+`runme eval` is an experimental command group for running repeatable task datasets against local coding agents. `runme eval task new` helps authors create a starter task under the default dataset layout.
 
 It builds on [Harbor's task, dataset, trial, and job model](https://www.harborframework.com/docs), but Runme presents the workflow through the `runme eval` CLI.
 
@@ -81,6 +81,43 @@ Staging depends on the selected environment:
 - When `--env docker` is selected, Runme mirrors the mapped workdir into the task's `environment/workdir` directory before delegating to Harbor. Docker-based setup can then include that directory from the task environment.
 
 Add `**/environment/workdir/` to `.gitignore` when Docker workdir staging is used. The staged copy is generated eval state, not source.
+
+## `runme eval task new`
+
+Create a Harbor eval task scaffold for Runme.
+
+```sh
+runme eval task new <org/name> [flags]
+```
+
+When `--tasks-dir` is omitted, Runme writes under `./evals/tasks`.
+
+Important flags:
+
+- `--tasks-dir`: eval tasks directory. Defaults to `./evals/tasks`.
+- `--org`: organization namespace for bare task names, such as `runme eval task new my-task --org runmedev`. Harbor uses it for dataset membership and published registry packages.
+- `--description`: task description written to `task.toml`.
+- `--author`: author in `Name <email>` or `Name` format. Can be repeated. When omitted, Runme uses `git config user.name` and `git config user.email` when available.
+- `--no-solution`: do not include `solution/solve.sh`.
+- `--force`: overwrite scaffold-owned files in an existing task directory.
+
+Generated files:
+
+- `README.md`: task-local run hint.
+- `task.toml`: Harbor task metadata and Runme-compatible environment defaults.
+- `instruction.md`: placeholder task instruction.
+- `environment/Dockerfile`: optional Docker environment starter.
+- `workdir/`: Git-ignored workspace for task-local files.
+- `tests/test.sh`: executable verifier stub that writes reward JSON.
+- `solution/solve.sh`: executable reference solution stub, unless `--no-solution` is passed.
+
+Behavior:
+
+- Qualified names use Harbor's `org/name` task identifier format and create a local directory named `name`.
+- Bare names require `--org`, which supplies the Harbor task namespace.
+- The scaffold maps the task workdir to `/app/<dataset>/<task>/workdir`.
+- Existing task directories require `--force`.
+- `--force` overwrites scaffold-owned files. Review hand-edited tasks before using it.
 
 ## `runme eval view`
 
