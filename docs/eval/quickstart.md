@@ -90,6 +90,36 @@ OPENAI_API_KEY="$OPENAI_API_KEY" runme eval examples/harbor/datasets/runme-rewar
   --env docker
 ```
 
+## Create your own task scaffold
+
+After running the included examples, use `runme eval task new` to start a task for your own workflow. The scaffold command is part of the `runme` CLI. Running evals still requires the Harbor adapter above.
+
+Start a new task in the default eval dataset:
+
+```sh
+runme eval task new runmedev/my-task \
+  --description "Evaluate whether an agent can complete my task"
+```
+
+This writes `evals/tasks/my-task/` by default. Bare task names are also supported when you pass `--org`; Harbor uses it as the task namespace for datasets and published registry packages:
+
+```sh
+runme eval task new my-task --org runmedev
+```
+
+Before running the scaffold as a real eval:
+
+- Replace `instruction.md` with the task prompt.
+- Implement `tests/test.sh` so it writes a meaningful reward to `$RUNME_REWARD_PATH`.
+- Fill in `solution/solve.sh` if you want an oracle or reference solution.
+- Add Docker setup in `environment/Dockerfile` only when the task needs `--env docker`.
+
+Run the scaffold after editing:
+
+```sh
+runme eval --task-dir my-task --agent claude-code
+```
+
 ## View eval jobs
 
 Open the eval dashboard for the default jobs directory:
