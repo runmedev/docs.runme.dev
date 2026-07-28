@@ -80,6 +80,8 @@ To run the same rubric with the deterministic oracle solution runner, replace `c
 
 Use `--env` to select one of the Harbor environments provided by the task dataset. When `--env` is omitted, Runme uses its default environment. For Docker environment configuration and task authoring details, see Harbor's [task environment docs](https://www.harborframework.com/docs/tasks#environment).
 
+Runme's default environment runs one concurrent trial because it shares the host workspace. Other Harbor environments, including Docker, use Harbor's configured or default concurrency. Pass Harbor flags after `--` to override concurrency, such as `-- --n-concurrent 4`.
+
 The RewardKit example also provides a Docker environment. Pass `OPENAI_API_KEY` explicitly because Docker runs hermetically and does not reuse your local agent OAuth session:
 
 ```sh
