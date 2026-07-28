@@ -82,7 +82,9 @@ When you run `runme eval` without extra path configuration, Runme uses these def
 - Dataset path: `./evals/tasks`
 - Jobs directory: `.runme/evals/jobs`
 - Agent: `oracle`, Harbor's built-in oracle solution runner
-- Environment: Runme's Harbor environment
+- Environment: Runme's Harbor environment, with one concurrent trial by default
+
+When you select another Harbor environment, such as `--env docker`, Runme uses Harbor's concurrency default instead. Override either behavior with passthrough Harbor flags, for example `-- --n-concurrent 4`.
 
 ## Commands
 

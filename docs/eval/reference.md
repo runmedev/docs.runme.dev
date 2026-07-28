@@ -40,6 +40,8 @@ Important flags:
 - `--runme-harbor-bin`: `runme-harbor` executable.
 - `--debug`: print delegated commands.
 
+Runme's environment defaults to one concurrent trial. Other Harbor environments, such as `--env docker`, use Harbor's configured or default concurrency. Pass Harbor flags after `--`, for example `-- --n-concurrent 4`, to override concurrency for any environment.
+
 Supported agents:
 
 - `oracle`: Harbor's built-in oracle solution runner. It runs the task's provided solution and is not an external agent CLI.
