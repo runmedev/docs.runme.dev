@@ -20,7 +20,7 @@ const keywords = [
 ];
 
 const visrAnnouncementDismissScript = `(function() {
-  var dismissedAtKey = "runme.visrAnnouncement.dismissedAt";
+  var dismissedAtKey = "runme.visrLaunchAnnouncement.dismissedAt";
   var docusaurusDismissKey = "docusaurus.announcement.dismiss";
   var dismissedAttribute = "data-runme-visr-announcement-dismissed";
   var ttl = 48 * 60 * 60 * 1000;
@@ -217,9 +217,9 @@ const config = {
         { property: "og:type", content: "website" },
       ],
       announcementBar: {
-        id: "runme_eval_agents_post",
+        id: "visr_launch_credit",
         content:
-          '<a target="_blank" rel="noopener noreferrer" href="https://runme.dev/blog/runme-eval">New post: Sure, Your Claude Is Doing Amazing Things. Prove It. &rarr;</a>',
+          '<a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=banner&utm_campaign=visr-launch">$10 free: Runme made your docs executable. Visr keeps agents honest. &rarr;</a>',
         backgroundColor: "#facc15",
         textColor: "#000000",
         isCloseable: true,
