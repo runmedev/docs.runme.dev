@@ -12,7 +12,7 @@ import AnnouncementBarContent from "@theme/AnnouncementBar/Content";
 
 import styles from "./styles.module.css";
 
-const DISMISSED_AT_STORAGE_KEY = "runme.visrAnnouncement.dismissedAt";
+const DISMISSED_AT_STORAGE_KEY = "runme.visrLaunchAnnouncement.dismissedAt";
 const DOCUSAURUS_DISMISS_STORAGE_KEY = "docusaurus.announcement.dismiss";
 const DISMISSED_ATTRIBUTE = "data-runme-visr-announcement-dismissed";
 const DISMISS_TTL_MS = 48 * 60 * 60 * 1000;
