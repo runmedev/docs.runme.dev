@@ -219,7 +219,7 @@ const config = {
       announcementBar: {
         id: "visr_launch_credit",
         content:
-          '<a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=banner&utm_campaign=visr-launch">$10 free: Runme made your docs executable. Visr keeps agents honest. &rarr;</a>',
+          '<a target="_blank" rel="noopener noreferrer" href="https://visr.dev/?utm_source=docs.runme.dev&utm_medium=banner&utm_campaign=visr-launch&utm_content=claude-md-untested">$10 free evals: Your CLAUDE.md is untested code. &rarr;</a>',
         backgroundColor: "#facc15",
         textColor: "#000000",
         isCloseable: true,
