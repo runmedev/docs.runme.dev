@@ -1,6 +1,7 @@
 # Known Limitations
 
-- Runme currently only has rudimentary support for PowerShell. While PowerShell is not limited to Windows, it is its primary platform. We recommend using [WSL](../installation/windows).
+- Use Bash or Zsh as your default shell with the Runme VS Code extension. Fish can trigger the extension’s shell warning when used as the default shell.
+- Runme has limited support for PowerShell as the default shell. On Windows, we recommend using [WSL](../installation/windows).
 - Please [report any issues](https://github.com/runmedev/runme/issues/new) you encounter, big or small, to help us make Runme better.
 
 ## Communication & Support
