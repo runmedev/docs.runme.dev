@@ -1,0 +1,13 @@
+/r/extension/background              /configuration/cell-level/#long-running-processes                      302
+/r/extension/interactive             /configuration/cell-level/#interactive-vs-non-interactive-cells        302
+/r/extension/closeTerminalOnSuccess  /configuration/cell-level/#terminal-visibility-post-execution         302
+/r/extension/promptEnv               /configuration/cell-level/#environment-variable-prompts               302
+/r/extension/mimeType                /configuration/mime/                                                   302
+/r/extension/gist                    https://runme.dev/blog/runme-gist                                      302
+/r/extension/name                    /configuration/cell-level/#unnamed-vs-named-cells                      302
+/r/extension/cwd                     /configuration/cell-level/#cell-cwd-current-working-directory         302
+/r/extension/interpreter             /usage/shebang/                                                         302
+/r/extension/category                /usage/run-tag/                                                         302
+/r/extension/excludeFromRunAll        /configuration/cell-level/#exclude-cell-from-run-all                  302
+/r/extension/terminalRows            /configuration/cell-level/#terminal-row                               302
+/r/extension/unsupported-shell       /installation/windows/                                                 302
